@@ -2,10 +2,10 @@ const  router  = require('express').Router();
 const bcrypt = require('bcrypt');  // encriptador de contraseñas
 // const auth = require('../services/middleware') 
 const jwt = require('jsonwebtoken');
-const React = require('react')
-const ReactDOMServer = require('react-dom/server')
 
-const vistaRegistro = require('../../frontend_react/src/pages/registro')
+
+
+
 
 const moment = require('moment')
 
@@ -64,9 +64,7 @@ router.post("/login", async (req, res) => { // http://localhost:3006/auth/login
                          expiresIn: 86400 // expires in 24 hours
                          });
                        
-                         var html = ReactDOMServer.renderToString(
-                          React.createElement(vistaRegistro)
-                        );
+                     
                          res.status(200).send({ auth: true, token: token,  message: "Se ha logueado exitosamente", html });
                         
                         

@@ -2,6 +2,7 @@
 
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+//import { Router }
 import Login from './pages/Login'
 import Registro from './pages/registro';
 import preferences  from './pages/Preferences';

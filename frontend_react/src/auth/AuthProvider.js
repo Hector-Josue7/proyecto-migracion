@@ -11,16 +11,25 @@ const AuthProvider = ({children}) => {  // revisar el video en el que se explica
    
    nombre_usuario,
       login() {
-                setUser( {codigo_usuario:1, nombre_usuario: "iBarahona" })
+               // setUser( {codigo_usuario:1, nombre_usuario: "iBarahona" })
+               setUser(null)
             },
       logout(){
             setUser(null);
-        }
+        },
+        isLogged(){ // comprobar si el usuario esta autenticado
+           return !!nombre_usuario;
+        } 
 }
     
-  return <AuthContext.provider value ={contextValue} >
-               {children}  
-         </AuthContext.provider>
+  return(
+  <AuthContext.Provider value ={contextValue} >
+    {children}  
+</AuthContext.Provider>);
+
+    
+   
+
 }
 export default AuthProvider;
 

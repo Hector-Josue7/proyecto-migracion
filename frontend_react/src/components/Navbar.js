@@ -1,8 +1,10 @@
 
 import { NavLink} from 'react-router-dom';
+import useAuth from '../auth/useAuth';
 
 export default function Navbar(){
 
+    const auth = useAuth();
 
     return (
         <nav>
@@ -49,6 +51,9 @@ export default function Navbar(){
         <NavLink exact to="/payments">Payments</NavLink>
     </li>
 
+    <li>
+        <button onClick={auth.logout}>Logout</button>
+    </li>
 
 </ul>
         </nav>

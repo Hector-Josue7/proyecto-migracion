@@ -33,15 +33,7 @@ ReactDOM.render(
 
 
 // https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
+// https://www.youtube.com/watch?v=oDQAzTJrbSI&t=127s   vamos por el minuto 12:47  
 
 
 
-// https://www.youtube.com/watch?v=oDQAzTJrbSI&t=127s      en el minuto 58:19 nos tira un error bien dificil de corregir 
-
-
-
-/*
-
-proyecto-sismo-DINAF
-Este es un proyecto enfocado a servir a los centros regionales donde se albergan niños, niñas y adolescentes, ofrecer monitoreo y gestion de usuarios y sus respectivos documentos
-*/
