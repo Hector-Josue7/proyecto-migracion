@@ -1,11 +1,13 @@
-  
 
-
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Switch,  } from 'react-router-dom';
 //import { Router }
 import Login from './pages/Login'
-import Registro from './pages/registro';
-import preferences  from './pages/Preferences';
+
+import './css/routes.css'
+//import Registro from './pages/registro';
+import Preferences  from './pages/Preferences';
+import Dashboard from './pages/Dashboard'
 import useToken from './modules/useToken'
 
 export default function Routes() {
@@ -18,16 +20,24 @@ export default function Routes() {
      return (
  //<Route exact path ="/registro" component ={Registro} />
 
+<div>
 
-      <Registro />
-    //  <BrowserRouter>
-    //  <Switch>
-    //      <Route exact path ="/registro" component ={Registro} />
-    //      <Route exact path ="/preferences" component ={preferences} />
+
+<h1>Application</h1>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/preferences">
+            <Preferences />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+
+</div>
     
-    //  </Switch>
-       
-    //  </BrowserRouter>
+   
        );
 
     }

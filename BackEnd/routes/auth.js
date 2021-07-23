@@ -45,7 +45,7 @@ router.post('/registro', async (req, res) =>{ // http://localhost:3006/auth/regi
 });
 
 
-router.post("/login", async (req, res) => { // http://localhost:3006/auth/login
+router.post("/login", async (req, res) => { // http://localhost:3007/auth/login
   
  // validaciones
  //const { error } = schemaLogin.validate(req.body);
@@ -65,7 +65,7 @@ router.post("/login", async (req, res) => { // http://localhost:3006/auth/login
                          });
                        
                      
-                         res.status(200).send({ auth: true, token: token,  message: "Se ha logueado exitosamente", html });
+                         res.status(200).send({ auth: true, token: token,  message: "Se ha logueado exitosamente" });
                         
                         
 
@@ -73,6 +73,8 @@ router.post("/login", async (req, res) => { // http://localhost:3006/auth/login
 
                      } else {   // aqui cae se si la contraseña es incorrecta 
                             return res.status(400).json({error: "ok", msj: "Usuario o contraseña incorrectos"})
+
+
                       }
               } else {   // aqui cae si el usuario no existe en la base de datos 
                

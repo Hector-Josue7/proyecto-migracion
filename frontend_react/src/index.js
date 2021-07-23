@@ -5,14 +5,14 @@ import './index.css';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 //import 'bootstrap/dist/js/bootstrap.min.js';
 
-import App from './App'
-// import Routes from './Routes'
+//import App from './App'
+import Routes from './Routes'
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <Routes/>
     
   </React.StrictMode>,
   document.getElementById('root')
@@ -34,6 +34,6 @@ ReactDOM.render(
 
 // https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
 // https://www.youtube.com/watch?v=oDQAzTJrbSI&t=127s   vamos por el minuto 12:47  
-
+// https://github.com/luismcabrera/react-router-dom/tree/main/src/pages
 
 
