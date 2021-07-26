@@ -39,7 +39,7 @@ router.post('/registro', async (req, res) =>{ // http://localhost:3007/auth/regi
         res.json({ message: 'Usuario agregado exitosamente' });
         res.end()
     } catch(error){
-      console.error(error);
+       console.error(error);
       return res.status(500).send({message: `Error al crear el usuario: ${error}`})
      }
 });
@@ -51,11 +51,7 @@ router.post("/login", async (req, res) => { // http://localhost:3007/auth/login
  //const { error } = schemaLogin.validate(req.body);
  //if (error) return res.status(400).json({ error: error.details[0].message }) 
    const {nombre_usuario, clave_usuario} = req.body
-
    const consulta = 'SELECT * FROM tbl_usuarios_migracion WHERE nombre_usuario = $1' 
-
-   
-   
    try {   
 
     if(!nombre_usuario || !clave_usuario) 

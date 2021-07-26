@@ -4,8 +4,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
-import Customers from "./components/customers/Customers";
-import Navbar from "./components/layout/Navbar";
+import Tablero from "./components/tablero/Tablero";
+//import Navbar from "./components/layout/Navbar";
 import AuthContext from "./context/AuthContext";
 
 function Router() {
@@ -13,26 +13,21 @@ function Router() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+     
       <Switch>
-        <Route exact path="/">
-          <div>Home</div>
-        </Route>
+        
+      <Route exact path="/" component ={Login} />
+     
+     
+
         {loggedIn === false && (
           <>
-            <Route path="/register">
-              <Register />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
+         <Route path="/registro" component= {Register} />
           </>
         )}
         {loggedIn === true && (
           <>
-            <Route path="/customer">
-              <Customers />
-            </Route>
+            <Route path="/tablero" component ={Tablero} />
           </>
         )}
       </Switch>

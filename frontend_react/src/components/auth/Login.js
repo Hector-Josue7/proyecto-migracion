@@ -1,7 +1,10 @@
 import axios from "axios";
 import React, { useState,  useContext } from "react";  //
-import { useHistory } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
+import logoDinaf from '../../img/logodinaf-01.png'
+import './Login.css'
+
 import Swal from 'sweetalert2';
 
 function Login() {
@@ -32,7 +35,7 @@ function Login() {
         timer: 1500
       })
      
-      history.push("/customer");
+      history.push("/tablero");
     } catch (err) {
     
       Swal.fire({
@@ -45,25 +48,62 @@ function Login() {
   }
 
   return (
-    <div>
-      <h1>Ingrese al sistema</h1>
-      <form onSubmit={login}>
-        <input
-          type="text"
-          placeholder="Usuario"
-          onChange={(e) => setUsername(e.target.value)}
-          value={nombre_usuario}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={clave_usuario}
-        />
-        <button type="submit">Log in</button>
-      </form>
+
+
+
+  
+ 
+ <div className="container p-4">
+<div className="row">
+  <div className ="col-12 ">
+  <main className="form-signin col-md-4  mx-auto d-flex ">
+<form onSubmit={login}>
+   
+  <img className="mb-4" src= {logoDinaf} alt="" width="310" height="175"/>
+  <h1 className="h3 mb-3 fw-normal">Ingrese al sistema</h1>
+
+   <div className="form-floating">
+      <input type="text" className="form-control" id="nombre_usuario" onChange={(e) => setUsername(e.target.value)}  value={nombre_usuario} />
+      <label for="nombre_usuario">Nombre de usuario</label>
     </div>
+
+     <div className="form-floating">
+      <input type="password" class="form-control" id="clave_usuario" onChange={(e) => setPassword(e.target.value)} value={clave_usuario} />
+      <label for="clave_usuario">Contraseña</label>
+    </div>
+
+    <div className="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="Recuerdame"/> Recuerdame
+      </label>
+    </div>
+
+    <button className="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
+ </form>
+</main>
+  </div>
+
+</div>
+
+
+</div> 
+
+ 
+   
   );
+
+     
+     
+
+
+
+
+
+  
+     
+
 }
+
+
 
 export default Login;
