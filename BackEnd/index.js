@@ -12,14 +12,13 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const app = express()
 
-// app.use(cors(corsOptions));
-// app.use(cors({
-//   origin: ["http://localhost:3000"],
-//   credentials: true,
-// }));
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000"],
+  credentials: true,
+}));
 
+//app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
@@ -29,7 +28,7 @@ app.use(express.urlencoded({extended:false}));
 // route middleware
 app.use('/auth',  require('./routes/auth'));         //  (1)
  // app.use('/views', require('./routes/rutas-get'));        //  (2)
- //app.use('/test', require('./routes/rutas-prueba'));        //  (3)
+ app.use('/test', require('./routes/rutas-prueba'));        //  (3)
  app.use('/templates', require('./routes/plantillasCRUD'))       //  (4) 
 
 

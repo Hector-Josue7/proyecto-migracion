@@ -12,7 +12,7 @@ pool.connect()
 
  // INICIO DE RUTAS BACKEND
 // devuelve todos los usuarios 
-router.get("/usuarios", async (req,res) =>{ // http://localhost:3006/templates/usuarios
+router.get("/usuarios", async (req,res) =>{ // http://localhost:3007/templates/usuarios
    let consulta = 'SELECT * FROM tbl_personas'
    let respuesta = await pool.query(consulta)
    res.json(respuesta.rows)

@@ -28,7 +28,7 @@ pool.connect()
 
 
 
-router.post('/registro', async (req, res) =>{ // http://localhost:3006/auth/registro
+router.post('/registro', async (req, res) =>{ // http://localhost:3007/auth/registro
   try {
         let {nombre_persona, apellido_persona, nombre_usuario, clave_usuario} = req.body;
         const saltos = await bcrypt.genSalt(10);
@@ -51,27 +51,43 @@ router.post("/login", async (req, res) => { // http://localhost:3007/auth/login
  //const { error } = schemaLogin.validate(req.body);
  //if (error) return res.status(400).json({ error: error.details[0].message }) 
    const {nombre_usuario, clave_usuario} = req.body
+
    const consulta = 'SELECT * FROM tbl_usuarios_migracion WHERE nombre_usuario = $1' 
+
    
    
    try {   
+
+    if(!nombre_usuario || !clave_usuario) 
+       return res.stautus(400).json({ errorMessage: "Por favor llene los campos"});
+
          const user = await pool.query(consulta, [nombre_usuario])
               if (user.rowCount > 0) {
                      var passwordIsValid = bcrypt.compareSync(clave_usuario, user.rows[0].clave_usuario);
                 if (passwordIsValid) {
                       console.log("se ha logueado bien ")
-                         var token = jwt.sign({ codigo_usuario: user.rows[0].codigo_usuario }, SECRET_TOKEN, {
+                         const  token = jwt.sign({ codigo_usuario: user.rows[0].codigo_usuario, 
+                                                   nombre_usuario: user.rows[0].nombre_usuario }, 
+                                                   SECRET_TOKEN, 
+                                      {
                          expiresIn: 86400 // expires in 24 hours
                          });
+
+                        //  res.header('auth-token', token).json({
+                        //    error: null,
+                        //    data: {token}
+                        //  })
+                        
+                        res.cookie("token", token, {
+                                      httpOnly: true,
+                                      secure: true,
+                                      sameSite: "none",
+                                    }).send();
                        
                      
-                         res.status(200).send({ auth: true, token: token,  message: "Se ha logueado exitosamente" });
+                        // res.status(200).send({ auth: true, token: token,  message: "Se ha logueado exitosamente" });
                         
-                        
-
-                        
-
-                     } else {   // aqui cae se si la contraseña es incorrecta 
+                         } else {   // aqui cae se si la contraseña es incorrecta 
                             return res.status(400).json({error: "ok", msj: "Usuario o contraseña incorrectos"})
 
 
@@ -92,7 +108,7 @@ router.post("/login", async (req, res) => { // http://localhost:3007/auth/login
   
 
 
-router.get("/logout", (req, res) => { // http://localhost:3006/auth/logout
+router.get("/logout", (req, res) => { // http://localhost:3007/auth/logout
   res.cookie("token", "", {
       httpOnly: true,
       expires: new Date(0),
@@ -103,13 +119,13 @@ router.get("/logout", (req, res) => { // http://localhost:3006/auth/logout
 });
 
 
-router.get("/loggedIn", (req, res) => { // http://localhost:3006/auth/loggedIn
+router.get("/loggedIn", (req, res) => { // http://localhost:3007/auth/loggedIn
   try {
     const token = req.cookies.token;
     if (!token) return res.json(false);
 
-    jwt.verify(token, SECRET_TOKEN );
-// process.env.JWT_SECRET
+    jwt.verify(token,  SECRET_TOKEN);
+
     res.send(true);
   } catch (err) {
     res.json(false);

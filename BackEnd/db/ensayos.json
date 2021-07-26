@@ -45,4 +45,13 @@
     "clave_persona": "usuario12"
 }
 
+
+
+{
+    "nombre_persona": "Camilo", 
+    "apellido_persona": "Olivares", 
+    "nombre_usuario": "camilitoO74", 
+    "clave_usuario": "asd.123"
+}
+
 //https://github.com/saullainez/calendar-app-backend/blob/master/controllers/auth.js

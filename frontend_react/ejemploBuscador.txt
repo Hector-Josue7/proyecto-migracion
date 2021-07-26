@@ -1,0 +1,9 @@
+<div class="col-right">
+     <form action="https://ionos.es/dcjump" class="innerform" method="GET" target="_blank">
+          <input name="ac" value="OM.WE.WEo50K361597T7073a" style="display:none">
+             <input placeholder="Introduce tu dominio" class="domaincheckinput" name="domain" type="text">
+                <button type="submit" class="btn btn-primary" onclick="domainCheckSitecat()">
+                     Comprobar
+                </button>
+     </form>
+</div>
