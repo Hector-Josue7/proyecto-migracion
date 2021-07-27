@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState,  useContext } from "react";  //
 import { useHistory} from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
-import logoDinaf from '../../img/logodinaf-01.png'
+import logoDinaf from '../../assets/img/logodinaf-01.png'
 import './Login.css'
 
 import Swal from 'sweetalert2';
