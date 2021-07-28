@@ -1,5 +1,5 @@
 export default function Navbar() {
- 
+ // https://medium.com/swlh/responsive-navbar-using-react-bootstrap-5e0e0bd33bd6
 const styles = {
   nav: {
 margin: '0px',

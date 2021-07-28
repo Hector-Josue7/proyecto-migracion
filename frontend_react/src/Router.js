@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Login from "./components/auth/Login";
+import Login from "./pages/Login";
 import Register from "./components/auth/Register";
 import Tablero from "./components/tablero/Tablero";
 //import Navbar from "./components/layout/Navbar";
