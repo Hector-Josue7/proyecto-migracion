@@ -3,13 +3,13 @@ import React, { useContext } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Login from "./pages/Login";
-import Register from "./components/auth/Register";
-import Tablero from "./components/tablero/Tablero";
-//import Navbar from "./components/layout/Navbar";
+import Registro from './pages/Registro';
+import Tablero from './pages/Tablero';
+
 import AuthContext from "./context/AuthContext";
 
 function Router() {
-  const { loggedIn } = useContext(AuthContext);
+  const { loggedIn } = useContext(AuthContext);  // esto sirve para filtrar paginas publicas de paginas privadas que solo se vean si hay un usuario logueado
 
   return (
     <BrowserRouter>
@@ -22,7 +22,7 @@ function Router() {
 
         {loggedIn === false && (
           <>
-         <Route path="/registro" component= {Register} />
+         <Route path="/registro" component= {Registro} />
           </>
         )}
         {loggedIn === true && (

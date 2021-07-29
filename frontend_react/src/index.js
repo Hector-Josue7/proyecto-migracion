@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import App from './App'
-//import Routes from './Routes'
+
 
 ReactDOM.render( 
   <React.StrictMode>
