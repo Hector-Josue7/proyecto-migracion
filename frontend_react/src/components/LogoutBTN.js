@@ -15,7 +15,7 @@ function LogoutBTN() {
     history.push("/");
   }
 
-  return <button onClick={logOut}>Log out</button>;
+  return <button className="btn btn-danger" onClick={logOut}>Cerrar sesion</button>;
 }
 
 export default LogoutBTN;

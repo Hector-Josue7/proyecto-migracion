@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import Navigation from '../components/Navbar'
 
 function Register() {
     const [nombre_persona, setNombre] = useState("");
@@ -41,6 +42,7 @@ function Register() {
 
   return (
     <div>
+    <Navigation />
       <h1>Register a new account</h1>
       <form onSubmit={register}>
       <input
