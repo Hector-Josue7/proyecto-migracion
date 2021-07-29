@@ -7,7 +7,7 @@ const pool = new Pool(credenciales)
 pool.connect()
 
 
-router.get("/usuarios/:id", async (req,res) =>{ // http://localhost:3006/test/usuarios/:id
+router.get("/expedientes/:id", async (req,res) =>{ // http://localhost:3006/nice/expedientes/:id
   let datos = [req.params.id]
   let consulta = `select p.genero , p.ininacionalidad, p.fechanacimiento, pn.gidpersona, pn.nombre, pn.segnombre, pn.apellido, pn.segapellido, pex.gidexpediente , pex.encalidad, pex.expnna, pex.gidpersona, ex.numero_expediente, ex.tiposinstrumentos, ex.fechacreacion, ex.numanterior, ex.numanterioranio, ex.sfecha, ex.fehavulneracion,
   epv.fechacreacion, epv.tipovulneracion, tpv.tipologia, u.unidad, u.gidcentros, c.nombre, s.gidtipocustodio, s.fechainicio, s.referencias, s.sfecha, s.tipogestion, s.tipo, tc.tipocustodio, tc.descripcion, tc.sfecha

@@ -29,7 +29,8 @@ app.use(express.urlencoded({extended:false}));
 app.use('/auth',  require('./routes/auth'));         //  (1)
  // app.use('/views', require('./routes/rutas-get'));        //  (2)
  app.use('/test', require('./routes/rutas-prueba'));        //  (3)
- app.use('/templates', require('./routes/plantillasCRUD'))       //  (4) 
+ app.use('/templates', require('./routes/plantillasCRUD'))       //  (4)
+app.use('/nice', require('./routes/rutasBuenas'))            // (5)     
 
 
 // iniciar servidor 
