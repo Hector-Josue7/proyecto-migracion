@@ -1,7 +1,7 @@
 
 
 import { Navbar, Nav, Container } from 'react-bootstrap'
-import LogoutBTN from '../components/LogoutBTN'
+import LogoutBTN from './LogoutBTN'
 
 const Navigation = () => {
   return(

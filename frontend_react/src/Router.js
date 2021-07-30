@@ -7,11 +7,7 @@ import Login from "./pages/Login";
 import Registro from './pages/Registro';
 import Tablero from './pages/Tablero';
 import Blog from './pages/Blog';
-
-
-
-
-
+//import './assets/css/Router.css'
 
 //import AuthContext from "./context/AuthContext";
 

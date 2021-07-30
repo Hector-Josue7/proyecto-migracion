@@ -1,12 +1,18 @@
 
-import Navigation from "../components/Navbar";
+import Aside from "../components/sidebar";
+// import Navbar from '../components/Navbar'
 
 const Blogs = () => {
 
   return(
       <>
-       <Navigation />
-      <h1>Blog Page</h1>
+     
+       <Aside />
+       {/* <Navbar /> */}
+      {/* <h1 style ={{
+        marginBottom:'480px',
+        paddingLeft: '20px'
+      }}>Blog Page</h1> */}
       </>
      
   ); 

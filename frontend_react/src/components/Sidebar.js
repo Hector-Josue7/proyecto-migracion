@@ -1,32 +1,54 @@
-import React from 'react'
-import { JournalEntries } from './entradas'
+import React , {useState}from 'react'
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
 
-function Sidebar() {
-    return (
-        <aside className="journal__sidebar">
-            
-            <div className="journal__sidebar-navbar">
-                <h3 className="mt-5">
-                    <i className="far fa-moon"></i>
-                    <span> Fernando</span>
-                </h3>
+import { Link } from 'react-router-dom'; 
+import {SidebarData} from './SidebarData';
+import '../assets/css/sidebar.css'
+import { IconContext } from 'react-icons';
 
-                <button className="btn">
-                    Logout
-                </button>
-            </div>
 
-            <div className="journal__new-entry">
-                <i className="far fa-calendar-plus fa-5x"></i>
-                <p className="mt-5">
-                    New entry
-                </p>
-            </div>
+function Navbar3() {
 
-            <JournalEntries />    
+    const [sidebar, setSideBar]  = useState(false);
+    const showSidebar = () => setSideBar(!sidebar);
 
-        </aside>
-    )
+return(
+    <>
+    <IconContext.Provider value = {{ color: '#fff'}}>
+    <div className ="navbar" >
+         <Link to ="#" className ='menu-bars' >
+            <FaIcons.FaBars  onClick = {showSidebar}/>
+         </Link>
+     </div>
+     <nav className= {sidebar ? 'nav-menu active': 'nav-menu'}>
+         <ul className = 'nav-menu-items' onClick={showSidebar}>
+            <li className = 'navbar-toggle'>
+                <Link to = '#' className = 'menu-bars'>
+                  <AiIcons.AiOutlineClose />
+                </Link>
+            </li>
+            {SidebarData.map((item, index) =>{
+                return (
+                    <li key = {index} className={item.cName}>
+                        <Link to= {item.path} >
+                            {item.icon}
+                            <span>{item.title}</span>
+                        </Link>
+                    </li>
+
+                )
+            })}
+         </ul>
+     </nav>
+    </IconContext.Provider>
+     
+
+    </>
+);
 }
 
-export default Sidebar
+export default Navbar3
+
+
+// ejecutar npm install react-icons --save   

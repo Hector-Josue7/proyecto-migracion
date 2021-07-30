@@ -26,7 +26,7 @@ ReactDOM.render(
 // https://github.com/jgbijlsma/mern-auth-template-tutorial
 // https://github.com/Borja95/reactLoginFakeApi
 // https://github.com/jgbijlsma/mern-auth-template-tutorial/blob/master/client/src/components/auth/Login.js
-// https://github.com/Borja95/reactLoginFakeApi/blob/master/src/pages/Login.js
+
 // https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
 // https://www.youtube.com/watch?v=oDQAzTJrbSI&t=127s   vamos por el minuto 12:47  
 // https://github.com/luismcabrera/react-router-dom/tree/main/src/pages
