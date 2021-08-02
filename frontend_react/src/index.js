@@ -1,3 +1,4 @@
+// 3340 5582 Linda Perez
 import React from 'react';
 import ReactDOM from 'react-dom';  // para hacer renderizaciones en el HTML
 
@@ -31,4 +32,6 @@ ReactDOM.render(
 
 // https://guias.makeitreal.camp/react/peticiones-http-con-axios
 
+
+//https://attachments.convertkitcdnm.com/211885/3ed242dc-1e14-4448-b978-d57aed9c1cb0/The_React__Axios_Cheatsheet.pdf
 
