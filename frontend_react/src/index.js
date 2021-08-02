@@ -1,8 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-
-
+import ReactDOM from 'react-dom';  // para hacer renderizaciones en el HTML
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import 'bootstrap/dist/js/bootstrap.min.js';
@@ -30,5 +27,8 @@ ReactDOM.render(
 // https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
 // https://www.youtube.com/watch?v=oDQAzTJrbSI&t=127s   vamos por el minuto 12:47  
 // https://github.com/luismcabrera/react-router-dom/tree/main/src/pages
+
+
+// https://guias.makeitreal.camp/react/peticiones-http-con-axios
 
 

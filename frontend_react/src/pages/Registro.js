@@ -31,7 +31,7 @@ function Register() {
     
       };
 
-       await axios.post("http://localhost:3007/auth/registro", registerData);
+       await axios.post("http://localhost:3007/migracion/usuarios/registro", registerData);
     
       await getLoggedIn();
       history.push("/");

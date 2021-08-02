@@ -23,7 +23,7 @@ function Login() {
          clave_usuario,
       };
 
-       await axios.post("http://localhost:3007/auth/login", loginData);
+       await axios.post("http://localhost:3007/migracion/usuarios/login", loginData);
    
       await getLoggedIn();
    

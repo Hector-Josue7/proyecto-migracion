@@ -71,6 +71,6 @@ router.delete('/eliminar/:codigo_persona', async (req, res)=>{ // http://localho
     }catch(error){
         return res.status(500).send({message: `Error en la ruta /eliminar/:codigo_persona >> ${error}`})
      }
-})
+});
 
 module.exports = router

@@ -1,14 +1,14 @@
 
-import Aside from "../components/sidebar";
-// import Navbar from '../components/Navbar'
+// import Aside from "../components/sidebar";
+import Navbar from '../components/Navbar'
 
 const Blogs = () => {
 
   return(
       <>
      
-       <Aside />
-       {/* <Navbar /> */}
+       {/* <Aside /> */}
+       <Navbar />
       {/* <h1 style ={{
         marginBottom:'480px',
         paddingLeft: '20px'

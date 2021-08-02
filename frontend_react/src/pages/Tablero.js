@@ -1,19 +1,20 @@
 
-import React, {useState, useEffect} from "react"; 
 import axios from "axios";
+import React, {useState, useEffect} from "react"; 
 
 
 
 
-//  import Navbar from "../components/Navbar";
+
+
 import Navbar from '../components/Navbar';
 //import { render } from "react-dom";
 // import {Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 // import { withRouter } from "react-router";
-//import '../assets/css/journal.css'
+//import '../assets/css/journal.css';
 
 
- function Tablero() {
+  const Tablero = () => {
 
  
 
@@ -36,7 +37,6 @@ import Navbar from '../components/Navbar';
   
 
 
-  // import React, { useEffect, useState } from "react";
   // import CustomerForm from "./CustomerForm";
   // import CustomerList from "./CustomerList";
   
@@ -65,38 +65,96 @@ import Navbar from '../components/Navbar';
 
 
 
+  // const saludo = <h1>Hola mundo </h1>
+  // document.body.append(saludo)
+  /*
+   const PrimeraApp = () => {
+     return  <h1>Hola mundo </h1>;
+   }
+   export default primeraApp;
+  */
 
-const [expediente, setBuscarExpediente] = useState([]);
 
-async function getExpedientes(){
+const [expediente, setBuscarExpediente] = useState("");
 
-  const expedienteRespuesta = await axios.get(`http://localhost:3007/nice/expedientes/${expediente}`);
-  setBuscarExpediente(expedienteRespuesta.data);
+// useEffect( async() => {
+//   const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
+  
+//   const response = await fetch(url);
+//   const data = await response.json();
+//   console.log(data);
+// }, [])
+
+
+
+// async function getExpedientes(){
+
+//   const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
+//   //const expedienteRespuesta = await axios.get(url);
+//   const resp = await fetch(url);
+//   const { data} = await resp.json();
+//   console.log(data);
+ 
+//   // setBuscarExpediente(expedienteRespuesta.data);
+// }
+
+// useEffect(() =>{
+//   getExpedientes();
+// });
+
+
+
+
+async function obtenerExpediente(e){
+  e.preventDefault();
+
+  try{
+ 
+
+   const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
+   const resp = await axios.get(url);
+
+  
+console.log(resp.data);
+   
+
+  }catch(err){
+console.error(err);
+  }
 }
 
-useEffect(() =>{
-  getExpedientes();
-});
 
-async function renderExpedientes({expediente}){
-return expediente.map( (expediente, i) =>{
 
-});
-}
+
+// async function renderExpediente(expediente){
+//   return expediente.map( (exp) =>{
+//     return(
+//       <>
+       
+//      <li>exp.ininacionalidad </li>
+    
+//       </>
+   
+//       ); 
+//   });
+// }
 
 
   return (
     <div>
-       <Navbar  /> 
+      
+      <Navbar />
 
-       <div class="mb-3">
+       <div className="mb-3">
        
-       <form   className="d-flex" style ={{marginTop: '-220px', 
+       <form onSubmit ={obtenerExpediente}  className="d-flex" style ={{marginTop: '-220px', 
       marginLeft: '280px'
        }}  >
      
      <label>Ingrese el codigo del expediente</label>
-     <input className="form-control me-2" style ={{ width: '400px'}} id ="inputSearch" type="search" placeholder="Search" aria-label="Search"  />
+     <input className="form-control me-2" style ={{ width: '400px'}} id ="inputSearch" type="search" placeholder="Ingrese el registro del expediente" aria-label="Search" 
+      onChange ={ (e) => setBuscarExpediente(e.target.value)} value={expediente}
+      />
      <button className="btn btn-success" type="submit">Search</button>
      
    </form> <br/><br/>
@@ -135,6 +193,8 @@ return expediente.map( (expediente, i) =>{
 
 
       
+        {/* <ul>{renderExpediente()}</ul> */}
+
     </div>
   );
 
@@ -143,6 +203,6 @@ return expediente.map( (expediente, i) =>{
 
 }
 
-export default Tablero;
 
+export default Tablero;
 

@@ -13,45 +13,20 @@
         "nombre_persona": "Isaac Guevara",
         "usuario_persona": "isaacGuevara4",
         "clave_persona": "asd.6789"
+    },
+
+    {
+        "nombre_persona": "Camilo", 
+        "apellido_persona": "Olivares", 
+        "nombre_usuario": "camilitoO74", 
+        "clave_usuario": "asd.123"
+    },
+    {
+        "nombre_persona": "Ivett",
+        "apellido_persona": "Varela",
+        "nombre_usuario": "ivetVarela93",
+        "clave_usuario": "asd.4567"
     }
 ]
 
-
-
-{
-    "usr_username": "alexGallardo5",
-    "usr_password": "asd.123"
-
-}
-
-{
-    "nombre_persona": "usuarios nombre1",
-    "usuario_persona": "usuario1",
-    "clave_persona": "asd.234"
-}
-
-
-
-{
-    "nombre_persona": "persona1 apellido1",
-    "usuario_persona": "ususarioPersona1",
-    "clave_persona": "asd.1234"
-}
-
-
-{   
-    "nombre_persona": "nombre 12",
-    "usuario_persona": "usuario12",
-    "clave_persona": "usuario12"
-}
-
-
-
-{
-    "nombre_persona": "Camilo", 
-    "apellido_persona": "Olivares", 
-    "nombre_usuario": "camilitoO74", 
-    "clave_usuario": "asd.123"
-}
-
-//https://github.com/saullainez/calendar-app-backend/blob/master/controllers/auth.js
+// https://github.com/saullainez/calendar-app-backend/blob/master/controllers/auth.js

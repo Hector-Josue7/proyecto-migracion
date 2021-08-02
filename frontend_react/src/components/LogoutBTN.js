@@ -9,7 +9,7 @@ function LogoutBTN() {
   const history = useHistory();
 
   async function logOut() {
-     await axios.get("http://localhost:3007/auth/logout");
+     await axios.get("http://localhost:3007/migracion/usuarios/logout");
   
     await getLoggedIn();
     history.push("/");
