@@ -1,7 +1,7 @@
 const  router  = require('express').Router();
 
 const getControllers = require('../controllers/get-controllers');  
-const autenticacionController = require('../controllers/autenticacion')
+const autenticacionController = require('../controllers/autenticacion');
 
 // RUTAS DE LOGIN Y REGISTRO
 router.post('/usuarios/registro', autenticacionController.registrousuarios); // http://localhost:3007/migracion/usuarios/registro

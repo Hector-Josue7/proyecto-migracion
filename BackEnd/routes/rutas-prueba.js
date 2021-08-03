@@ -1,10 +1,12 @@
 const  router  = require('express').Router();
-const { Pool } = require('pg');
 
-// conexion a base de datos
+// conexion a la base de datos
+const { Pool } = require('pg');
 const { credenciales } = require('../config')
 const pool = new Pool(credenciales)
 pool.connect()
+// INGRESAR AQUI LAS RUTAS A TESTEAR
+
 
 module.exports = router
 
