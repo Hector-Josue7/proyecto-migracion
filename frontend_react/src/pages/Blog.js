@@ -1,5 +1,5 @@
 
-// import Aside from "../components/sidebar";
+//  import Aside from "../components/Sidebar";
 import Navbar from '../components/Navbar'
 
 const Blogs = () => {

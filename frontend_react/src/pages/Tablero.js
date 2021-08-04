@@ -3,6 +3,7 @@ import axios from "axios";
 import React, {useState, useEffect} from "react"; 
 
 import Navbar from '../components/Navbar';
+// import Aside from "../components/Sidebar2";
 
 // import {Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 // import { withRouter } from "react-router";
@@ -10,45 +11,80 @@ import Navbar from '../components/Navbar';
 
 
   const Tablero = () => {
-const [expediente, setBuscarExpediente] = useState([]);
-const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
 
-
-
-
-
-const busquedaExpediente = async (e) =>{
-  e.preventDefault();
-  const res = await axios.get(url);
-console.log(res.data)
-//setBuscarExpediente(res.data);
-}
-
-
-// useEffect(() =>{
-
+// const [expediente, setExpediente] = useState({
+//   fechanacimiento: '',
+//   gidpersona: '',
+//   nombre: 'agapito',
+//   segnombre: '',
+//   apellido: '',
+//   segapellido: '',
+//   gidexpediente: ''
 // });
 
 
 
-  return (
+//const [expediente, setExpediente] = useState({});
+const [expediente, setExpediente] = useState([]);
+
+
+
+const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
+
+const busquedaExpediente = async (e) =>{
+e.preventDefault();
+  try{
+    const res = await axios.get(url);
+   console.log(res.data);
+   //  const res = await fetch(url);
+  
+
+    
+    setExpediente(res.data);
+    
+  } catch(err){
+console.error(err);
+  }
+ 
+
+
+}
+
+useEffect(() => {
+  busquedaExpediente();
+}, []);
+
+
+
+
+
+
+
+
+function renderExpedientes(){
+  return expediente.map( (exp, i) =>{
+     return <li>exp.referencias</li>
+  });
+}
+
+return (
     <div>
       
       <Navbar />
-
+      {/* <Aside /> */}
        <div className="mb-3">
        
-       <form className="d-flex" style ={{marginTop: '-220px', 
+       <form onSubmit={busquedaExpediente} className="d-flex" style ={{marginTop: '-220px', 
       marginLeft: '280px'
        }}  >
      
-     <label>Ingrese el codigo del expediente</label>
+   
      <input className="form-control me-2" style ={{ width: '400px'}} type="search" placeholder="Ingrese el registro del expediente" aria-label="Search" autoComplete="off"
-        onChange = { (e) =>{ setBuscarExpediente(e.target.value)}} 
-      value={expediente}
+        onChange = { (e) =>{ setExpediente(e.target.value)}} 
+        value={expediente}
       />
-     <button className="btn btn-success" onClick ={busquedaExpediente}  >Search</button>
-     
+     <button className="btn btn-success" type = "submit" >Search</button>
+ 
    </form> <br/><br/>
    </div>
   
@@ -85,7 +121,14 @@ console.log(res.data)
 
 
       
-        {/* <ul>{muestraExpediente()}</ul> */}
+        <ul>{renderExpedientes()}</ul>
+
+        
+
+<div>
+ {expediente.nombre}
+</div>
+
 
     </div>
   );
