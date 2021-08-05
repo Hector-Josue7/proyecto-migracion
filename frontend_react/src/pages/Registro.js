@@ -44,7 +44,7 @@ function Register() {
   return (
     <div>
      <Navigation />
-      <h1>Register a new account</h1>
+      <h1>Registrar una nueva cuenta</h1>
       <form onSubmit={register}>
       <input
           type="text"

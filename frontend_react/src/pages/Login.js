@@ -64,12 +64,12 @@ function Login() {
 
    <div className="form-floating">
       <input type="text" className="form-control" id="nombre_usuario" onChange={(e) => setUsername(e.target.value)}  value={nombre_usuario} />
-      <label for="nombre_usuario">Nombre de usuario</label>
+      <label htmlFor="nombre_usuario">Nombre de usuario</label>
     </div>
 
      <div className="form-floating">
-      <input type="password" class="form-control" id="clave_usuario" onChange={(e) => setPassword(e.target.value)} value={clave_usuario} />
-      <label for="clave_usuario">Contraseña</label>
+      <input type="password" className="form-control" id="clave_usuario" onChange={(e) => setPassword(e.target.value)} value={clave_usuario} />
+      <label htmlFor="clave_usuario">Contraseña</label>
     </div>
 
     <div className="checkbox mb-3">

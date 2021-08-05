@@ -20,7 +20,7 @@ function Router() {
               <Route exact path="/tablero" component ={Tablero} />
               <Route exact path="/registro" component ={Registro} />
               <Route exact path="/blog" component ={Blog} />
-            
+              <Route exact path="/restitucion" component ={Blog} />
 
                 {/* {loggedIn === false && (
                   <>

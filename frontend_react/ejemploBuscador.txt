@@ -7,3 +7,49 @@
                 </button>
      </form>
 </div>
+
+
+
+
+
+
+let estaciones = ["Primavera", "Verano", "Otoño", "Invierno"];
+<ul>
+{estaciones.map(el => (
+     <li> {el}</li>
+) )}
+
+</ul>
+
+
+
+<ul>
+{estaciones.map  ( (el, index) => (
+     <li key ={index}> {el}</li>
+) )}
+
+</ul>
+
+
+
+
+
+Propiedades.defaultProps = {
+
+     porDefecto: "Las props",  ///propiedad por defecto
+}
+
+
+
+npm i -S prop-types
+import PropTypes from "prop-types";
+
+
+
+Propiedades.propTypes = {
+     numero: PropTypes.number, 
+}
+
+Propiedades.propTypes = {
+     numero: PropTypes.number.isRequired, 
+}

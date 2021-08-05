@@ -1,71 +1,21 @@
 
-import axios from "axios";
+//import axios from "axios";
 import React, {useState, useEffect} from "react"; 
-
 import Navbar from '../components/Navbar';
-// import Aside from "../components/Sidebar2";
 
-// import {Container, Row, Col, Card, Form, Button } from "react-bootstrap";
-// import { withRouter } from "react-router";
-//import '../assets/css/journal.css';
-
-
-  const Tablero = () => {
-
-// const [expediente, setExpediente] = useState({
-//   fechanacimiento: '',
-//   gidpersona: '',
-//   nombre: 'agapito',
-//   segnombre: '',
-//   apellido: '',
-//   segapellido: '',
-//   gidexpediente: ''
-// });
-
-
-
-//const [expediente, setExpediente] = useState({});
+const Tablero = () => {
 const [expediente, setExpediente] = useState([]);
 
-
-
+//const url = `http://localhost:3007/migracion/expedientes`;
 const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
+//const url = 'http://localhost:3007/migracion/expedientes/Exp-DINAF-2019-4475';
 
-const busquedaExpediente = async (e) =>{
-e.preventDefault();
-  try{
-    const res = await axios.get(url);
-   console.log(res.data);
-   //  const res = await fetch(url);
-  
-
-    
-    setExpediente(res.data);
-    
-  } catch(err){
-console.error(err);
-  }
- 
-
-
-}
-
-useEffect(() => {
-  busquedaExpediente();
-}, []);
-
-
-
-
-
-
-
-
-function renderExpedientes(){
-  return expediente.map( (exp, i) =>{
-     return <li>exp.referencias</li>
-  });
-}
+ // CODIGO FUNCIONAL
+useEffect( () =>{
+fetch(url)
+.then( respuesta => respuesta.json())
+.then(json => setExpediente(json));
+},[]);
 
 return (
     <div>
@@ -74,71 +24,51 @@ return (
       {/* <Aside /> */}
        <div className="mb-3">
        
-       <form onSubmit={busquedaExpediente} className="d-flex" style ={{marginTop: '-220px', 
-      marginLeft: '280px'
-       }}  >
-     
-   
-     <input className="form-control me-2" style ={{ width: '400px'}} type="search" placeholder="Ingrese el registro del expediente" aria-label="Search" autoComplete="off"
-        onChange = { (e) =>{ setExpediente(e.target.value)}} 
-        value={expediente}
+       <form  className="d-flex" style ={{marginTop: '-220px', marginLeft: '280px'}} >
+         <input className="form-control me-2" style ={{ width: '400px'}} type="search" placeholder="Ingrese el registro del expediente" aria-label="Search" autoComplete="off"
+        onChange = { (e) =>{ setExpediente(e.target.value)}}
+         value={expediente}
       />
-     <button className="btn btn-success" type = "submit" >Search</button>
+     <button className="btn btn-success" type = "submit" onClick = { () => setExpediente(expediente)} >Search</button>
  
    </form> <br/><br/>
    </div>
-  
-       {/* onSubmit={this.getExpediente} */}
-      
-
-
-      {/*
-       onChange={(e) => setBuscarExpediente(e.target.value)}   value={expediente}
-
-     */}
-
-      {/* <table className="table table-bordered">
+     <table className="table table-bordered">
         <thead>
           <tr>
-            <th>Código</th>
-            <th>Descripción</th>
-            <th>Precio</th>                    
+            <th>Genero</th>
+            <th>Ininacionalidad</th>
+            <th>fechanacimiento</th>   
+            <th>gidpersona</th>     
+            <th>nombre</th>      
+            <th>segnombre</th>   
+            <th>apellido</th>      
+            <th>segapellido</th> 
+            <th>numero expediente</th>
           </tr>
         </thead>
         <tbody>  
-          {this.state.registros.map(exp => {
+          {expediente.map(exp => {
             return (
               <tr>
                 <td>{exp.genero}</td>
                 <td>{exp.ininacionalidad}</td>
                 <td>{exp.fechanacimiento}</td>
                 <td>{exp.gidpersona}</td>
+                <td>{exp.nombre}</td>
+                <td>{exp.segnombre}</td>
+                <td>{exp.apellido}</td>
+                <td>{exp.segapellido}</td>
+                <td>{exp.numero_expediente}</td>
               </tr>
             );
           })} 
         </tbody>
-        </table>  */}
-
-
-      
-        <ul>{renderExpedientes()}</ul>
-
-        
-
-<div>
- {expediente.nombre}
-</div>
-
-
-    </div>
+        </table> 
+ </div>
   );
 
-  
-
-
 }
-
-
 export default Tablero;
 
 

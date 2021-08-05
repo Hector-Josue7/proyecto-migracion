@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { TitleComponentStyled } from '../assets/css/TitleComponetStyled';
 
 export const TitleComponent = ({label}) => {
