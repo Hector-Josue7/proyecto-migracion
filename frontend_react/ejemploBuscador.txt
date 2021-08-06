@@ -53,3 +53,57 @@ Propiedades.propTypes = {
 Propiedades.propTypes = {
      numero: PropTypes.number.isRequired, 
 }
+
+
+
+
+
+
+* FORMATO RESTITUCION INTERNACIONAL  |           BASE DE DATOS SISMO 
+      * NNA                                           
+____________________________________________________________________________________________________________________________   
+                                               * personanombres(tabla)                                     
+          * NOMBRE COMPLETO       ->                 * nombre
+                                  ->                 * segnombre
+                                  ->                 * apellido 
+                                  ->                 * segapellido
+_____________________________________________________________________________________________________________________________
+          * FECHA NACIMIENTO      ->           * persona(tabla)
+                                                     * fechanacimiento
+_____________________________________________________________________________________________________________________________
+          * NACIONALIDAD          ->          * personanacionalidad(tabla)  No hay informacion en esta tabla      
+                                                      * gidpersona_nacionalidad
+                                                      * gidnacionalidad           
+                                                      * gidpersona       las personas dependen de una nacionalidad, 
+                                                                         pero las nacionalidades son independientes
+                                                                         este campo debe ir en la tabla de personas, no aqui
+                                   ->          * nacionalidad(tabla)  No hay informacion en esta tabla 
+                                                       * gidnacionalidad
+                                                       * nacionalidad
+________________________________________________________________________________________________________________________________
+          * EDAD                   ->          * persona(tabla)
+                                                       * edad
+_________________________________________________________________________________________________________________________________
+          * LUGAR DE NACIMIENTO    ->           (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona 
+                                                con un ALTER TABLE)
+__________________________________________________________________________________________________________________________________
+          * FECHA CUMPLIR 16 AÑOS  ->           (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona 
+                                                con un ALTER TABLE)
+__________________________________________________________________________________________________________________________________
+          * CICATRICES O MARCAS    ->           * persona(tabla)
+            NACIMIENTO                                  * signosfisicos
+__________________________________________________________________________________________________________________________________
+          * DIRECCION ANTES DE     ->           (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona 
+            LA SUSTRACCION                       con un ALTER TABLE)
+___________________________________________________________________________________________________________________________________
+          * DIRECCION ACTUAL       ->           (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona
+                                                 con un ALTER TABLE)
+____________________________________________________________________________________________________________________________________
+          * ACTIVIDADES Y          ->           (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona 
+          ENTRETENIMIENTOS                       con un ALTER TABLE)
+          HABITUALES 
+_____________________________________________________________________________________________________________________________________ 
+          * PESO                   ->            (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona
+                                                  con un ALTER TABLE)
+______________________________________________________________________________________________________________________________________
+

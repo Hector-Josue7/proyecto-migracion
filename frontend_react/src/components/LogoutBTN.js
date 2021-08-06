@@ -7,7 +7,6 @@ function LogoutBTN() {
   const { getLoggedIn } = useContext(AuthContext);
 
   const history = useHistory();
-
   async function logOut() {
      await axios.get("http://localhost:3007/migracion/usuarios/logout");
   

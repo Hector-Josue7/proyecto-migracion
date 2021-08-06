@@ -1,19 +1,12 @@
-// 3340 5582 Linda Perez
 import React from 'react';
 import ReactDOM from 'react-dom';  // para hacer renderizaciones en el HTML
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import 'bootstrap/dist/js/bootstrap.min.js';
-
-
-import App from './App'
-
+import {MigracionApp} from './MigracionApp'
 
 ReactDOM.render( 
-  <React.StrictMode>
-    <App/>
-  </React.StrictMode>,
-  document.getElementById('root') );
+    <MigracionApp/>,
+    document.getElementById('root') 
+);
 
 
 
@@ -24,18 +17,12 @@ ReactDOM.render(
 // https://github.com/jgbijlsma/mern-auth-template-tutorial
 // https://github.com/Borja95/reactLoginFakeApi
 // https://github.com/jgbijlsma/mern-auth-template-tutorial/blob/master/client/src/components/auth/Login.js
-
 // https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
 // https://www.youtube.com/watch?v=oDQAzTJrbSI&t=127s   vamos por el minuto 12:47  
 // https://github.com/luismcabrera/react-router-dom/tree/main/src/pages
-
-
 // https://guias.makeitreal.camp/react/peticiones-http-con-axios
-
-
-//https://attachments.convertkitcdnm.com/211885/3ed242dc-1e14-4448-b978-d57aed9c1cb0/The_React__Axios_Cheatsheet.pdf
+// https://attachments.convertkitcdnm.com/211885/3ed242dc-1e14-4448-b978-d57aed9c1cb0/The_React__Axios_Cheatsheet.pdf
 // https://rsuitejs.com/components/sidenav/
-
 // https://github.com/jonmircha/youtube-react
 // https://attachments.convertkitcdnm.com/211885/3ed242dc-1e14-4448-b978-d57aed9c1cb0/The_React__Axios_Cheatsheet.pdf
 

@@ -14,10 +14,7 @@ const Navigation = () => {
                <Nav.Link href='/tablero'>Tablero</Nav.Link>
                <Nav.Link href='/registro'>Registro</Nav.Link>
                <Nav.Link href='/blog'>Blog</Nav.Link>
-               
-
                <Nav.Link > <LogoutBTN/></Nav.Link>
-               
             </Nav>
          </Navbar.Collapse>
        </Container>
