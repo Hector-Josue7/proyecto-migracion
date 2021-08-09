@@ -1,6 +1,3 @@
-// https://bluuweb.github.io/node/07-jwt/#validaciones-hapi-joi
-// https://github.com/carlosazaustre/node-api-rest-2017
-// https://www.tabnine.com/code/javascript/functions/bcryptjs/compareSync
 const express = require('express');
 const morgan = require("morgan");
 const cors = require('cors')

@@ -8,7 +8,7 @@ const init = () => {
 }
 
 
-export const MigracionApp = () => {
+const MigracionApp = () => {
     
     const [ user, dispatch ] = useReducer(authReducer, {}, init);
 
@@ -24,3 +24,5 @@ export const MigracionApp = () => {
 
     )
 }
+
+export default MigracionApp

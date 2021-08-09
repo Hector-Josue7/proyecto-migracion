@@ -7,7 +7,7 @@ function restitucionInternacional() {
              return (
               <div>
               <Navigation />
-                <h1>Registrar una nueva cuenta</h1>
+                <h1>Restitucion internacional</h1>
               </div>
          );
         </div>

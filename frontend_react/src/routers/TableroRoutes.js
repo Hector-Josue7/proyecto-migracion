@@ -1,15 +1,15 @@
 import React from 'react';
-import { Navbar } from '../components/ui/Navbar';
+import Navigation from '../components/Navbar';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import {Tablero} from '../pages/Tablero'
+import Tablero from '../pages/Tablero'
 
-export const DashboardRoutes = () => {
+export const TableroRoutes = () => {
 
 
     return (
         <>
-            <Navbar />
+            <Navigation />
 
             <div className="container mt-2">
                 <Switch>

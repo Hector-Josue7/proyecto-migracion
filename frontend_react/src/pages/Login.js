@@ -2,16 +2,18 @@ import axios from "axios";
 import React, { useState,  useContext } from "react";  //
 import { useHistory} from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+
 import logoDinaf from '../assets/img/logodinaf-01.png';
 import '../assets/css/Login.css'
-
 import Swal from 'sweetalert2';
 
-function Login() {
+export default function Login() {
   const [nombre_usuario, setUsername] = useState("");
   const [clave_usuario, setPassword] = useState("");
 
   const { getLoggedIn } = useContext(AuthContext);
+
+
   const history = useHistory();
 
   async function login(e) {
@@ -93,17 +95,7 @@ function Login() {
   );
 
      
-     
+    }
 
 
 
-
-
-  
-     
-
-}
-
-
-
-export default Login;

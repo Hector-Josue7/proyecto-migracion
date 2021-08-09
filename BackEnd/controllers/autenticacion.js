@@ -95,8 +95,7 @@ const cerrarSesion = async (req, res) => {
         expires: new Date(0),
         secure: true,
         sameSite: "none",
-      })
-      .send();
+      }).send();
 }
 
 const estaLogueado = async (req, res) => {

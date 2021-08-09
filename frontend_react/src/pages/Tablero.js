@@ -44,7 +44,7 @@ return (
    </form> <br/><br/>
    </div>
 
-     <table className="table table-bordered">
+     {/* <table className="table table-bordered">
         <thead>
           <tr>
             <th>Genero</th>
@@ -78,7 +78,7 @@ return (
           
             )} 
         </tbody>
-        </table> 
+        </table>  */}
  </div>
   );
 
