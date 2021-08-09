@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';  // para hacer renderizaciones en el HTML
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App3 from './App3';
+import App from './App';
 import './index.css';
 
 ReactDOM.render( 
     <React.StrictMode>
-       <App3 />
+       <App />
     </React.StrictMode>,
     document.getElementById('root') 
 );
@@ -19,7 +19,6 @@ ReactDOM.render(
 // https://www.youtube.com/watch?v=7ioabL1OAyM   vamos por el minuto 7:15
 // https://github.com/jgbijlsma/mern-auth-template-tutorial
 // https://github.com/Borja95/reactLoginFakeApi
-// https://github.com/jgbijlsma/mern-auth-template-tutorial/blob/master/client/src/components/auth/Login.js
 // https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
 // https://www.youtube.com/watch?v=oDQAzTJrbSI&t=127s   vamos por el minuto 12:47  
 // https://github.com/luismcabrera/react-router-dom/tree/main/src/pages

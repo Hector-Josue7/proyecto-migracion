@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import Navigation from '../components/Navbar'
-
+import Sidebar from '../components/Sidebar';
 
 function Register() {
     const [nombre_persona, setNombre] = useState("");
@@ -44,6 +44,7 @@ function Register() {
   return (
     <div>
      <Navigation />
+     <Sidebar />
       <h1>Registrar una nueva cuenta</h1>
       <form onSubmit={register}>
       <input

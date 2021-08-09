@@ -25,6 +25,21 @@ export const SidebarData = [
         cName: 'nav-text'
 
     },
+
+    {
+        title: 'Restitucion Internacional',
+        path: '/restitucion',
+        icon: <FaIcons.FaCartPlus />,
+        cName: 'nav-text'
+
+    },
+    {
+        title: 'Solicitud Retorno',
+        path: '/retorno',
+        icon: <FaIcons.FaCartPlus />,
+        cName: 'nav-text'
+
+    },
   
   
     
