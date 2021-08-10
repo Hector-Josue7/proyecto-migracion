@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 
 import Navbar from '../components/Navbar';
 
-import Sidebar from '../components/Sidebar';
+import Sidebar3 from '../components/Sidebar3';
 
 function muestraExpedientes({exp}){
   let {genero, ininacionalidad, fechanacimiento, gidpersona, nombre, segnombre, apellido, segapellido, numero_expediente} = exp;
@@ -86,10 +86,10 @@ return (
     <div>
       
       <Navbar />
-      <Sidebar />
+     
        <div className="mb-3">
        
-       <form  className="d-flex" style ={{marginTop: '-220px', marginLeft: '280px'}} onSubmit ={getExpedientes} >
+       <form  className="d-flex" style ={{marginTop: '-200px', marginLeft: '280px'}} onSubmit ={getExpedientes} >
          <input className="form-control me-2" style ={{ width: '400px'}} 
           type="text" 
           placeholder="Ingrese el registro del expediente" 
@@ -105,12 +105,17 @@ return (
       />
      <button className="btn btn-success" type = "submit">Search</button>
  
-   </form> <br/><br/>
+   </form> 
+
+   <Sidebar3 />
+
+
+   <br/><br/>
    </div>
 
      
      
-     <table className="table table-bordered">
+     {/* <table className="table table-bordered">
         <thead>
           <tr>
             <th>Genero</th>
@@ -142,7 +147,7 @@ return (
           }
           
         </tbody>
-        </table> 
+        </table>  */}
  </div>
   );
 

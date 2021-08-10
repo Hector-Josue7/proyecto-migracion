@@ -5,8 +5,9 @@ import Login from "./pages/Login";
 import Registro from './pages/Registro';
 import Tablero from './pages/Tablero';
 import Blog from './pages/Blog';
-import RestitucionInternacional from './pages/RestitucionInternacional';
+// import RestitucionInternacional from './pages/RestitucionInternacional';
 import solicitudRetorno from './pages/solicitudRetorno'
+// import Sidebar3 from './pages/Sidebar3';
 
 //import './assets/css/Router.css'
 
@@ -24,8 +25,9 @@ function Router() {
               {/* <Route exact path="/tablero2" component ={Tablero2} /> */}
               <Route exact path="/registro" component ={Registro} />
               <Route exact path="/blog" component ={Blog} />
-              <Route exact path="/restitucion" component ={RestitucionInternacional} />
+              {/* <Route exact path="/restitucion" component ={RestitucionInternacional} /> */}
               <Route exact path="/retorno" component ={solicitudRetorno} />
+              {/* <Route exact path="/sidebar3" component ={Sidebar3} /> */}
                 {/* {loggedIn === false && (
                   <>
                 <Route exact path="/login" component ={Login} />

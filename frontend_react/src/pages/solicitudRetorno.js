@@ -1,12 +1,13 @@
 import React from 'react';
-import SideBar from '../components/Sidebar'
+import SideBar3 from '../components/Sidebar3'
 import Navigation from '../components/Navbar';
 export default function solicitudRetorno(){
+
 
     return(
     <>
     <Navigation />
-     <SideBar />
+     <SideBar3 />
         <h2>Nos encotramos en la solicitud de retorno</h2>
     </>
        

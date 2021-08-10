@@ -1,24 +1,22 @@
 import React, { useState, useMemo } from 'react'
 import Navigation from '../components/Navbar';
-import SideBar from '../components/Sidebar'
+import SideBar3 from '../components/Sidebar3'
 
 
 
 import {Form, Button} from 'react-bootstrap';
 
-const weekDays = { nl: ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'] };
+
 function RestitucionInternacional( { selectedDate, onChange }) {
-  const [showDate, setShowDate] = useState(new Date(selectedDate));
-  const firstDayThisMonth = new Date(showDate.getFullYear(), showDate.getMonth(), 1);
-   // getDay sunday=0 and we monday=0
-   const dayOfWeek = (firstDayThisMonth.getDay() + 6) % 7;
-    // first day of next month
+
+
+
   return (
         <div>
             
               
               <Navigation />
-              <SideBar />
+              <SideBar3 />
                 <h1 style={{
                   marginBottom: '100px',
                   marginLeft: '400px'
