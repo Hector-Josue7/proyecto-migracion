@@ -1,9 +1,39 @@
 
 import axios from "axios";
-import React, {useState, useEffect} from "react"; 
-
+import React, {useState , useEffect} from "react"; 
 import Navbar from '../components/Navbar';
+// import Sidebar from '../components/Sidebar';
+//************************************************************** */
+export default function Tablero() {
+const [expediente, setExpediente] = useState('');
+//const url = 'http://localhost:3007/migracion/expedientes/Exp-DINAF-2019-4475';
+ const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
+async function getExpedientes(e){
+ e.preventDefault();
 
+     try{
+       console.log('lectura de expediente '+expediente);
+const expedienteRespuesta = await axios.get(url);
+    // setCampo('');
+//console.log(expedienteRespuesta.data);
+  //   setExpediente(expedienteRespuesta.data);  // se guarda guarda la busqueda en el estado del componente padre 
+     
+     //return expedienteRespuesta.data;
+    //return expediente;
+} catch(err){
+console.log(err);
+//throw err;
+  }
+  }
+
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  // useEffect( () =>{
+  // getExpedientes();
+  //     }, [])
+=======
+>>>>>>> Stashed changes
 import Sidebar3 from '../components/Sidebar3';
 
 function muestraExpedientes({exp}){
@@ -22,66 +52,99 @@ function muestraExpedientes({exp}){
   </tr>);
 }
 const Tablero = () => {
+>>>>>>> 80397375fb0c32fbe70e6e0b81dd7692d85bf00d
+
+//***************************************************************************************** */
+function renderExpediente(){
+ const arreExpediente = getExpedientes();
+return arreExpediente.map(  (exp) => (
 
 
-const [expediente, setExpediente] = useState([]);
 
+  <tr key ={exp.numero_expediente}>
+   <td>{exp.genero}</td>
+   <td>{exp.ininacionalidad}</td>
+   <td>{exp.fechanacimiento}</td>
+   <td>{exp.gidpersona}</td>
+   <td>{exp.nombre}</td>
+   <td>{exp.segnombre}</td>
+   <td>{exp.apellido}</td>
+   <td>{exp.segapellido}</td>
+</tr>
+)
 
-//const url = `http://localhost:3007/migracion/expedientes`;
- 
-//const url = 'http://localhost:3007/migracion/expedientes/Exp-DINAF-2019-4475';
+) 
 
- // CODIGO FUNCIONAL
-// useEffect( () =>{
-// fetch(url)
-// .then( respuesta => respuesta.json())
-// .then(json => console.log(json)
-// //  setExpediente(json)} );
-
-// },[]);
-
-// React Hook UseEffect has a missing dependency: '
-
-const handleChange = (e) =>{
-  setExpediente({
-   ...expediente,
-   [e.target.name]: e.target.value
-  });
 }
-
-// const reset = () =>{
-//   setExpediente(initialState)
-// }
-
-async function getExpedientes(e){
-  e.preventDefault();
-
-  // if(!expediente.numero_expediente){
-  //   alert("Esos datos son erroneos");
-  //   return;
-  // }else {
-
-      try{
-    const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
-    const expedienteRespuesta = await axios.get(url);
-    // setExpediente(expedienteRespuesta.data);
-   //console.log(expedienteRespuesta.data);
-
-  } catch(err){
-console.log(err);
-  }
-  // }
-
 
   
-// handleSearch(form);
-// setForm(initialForm);
+
+
+
+return (
+  
+  <div>
+    <Navbar />
+    {/* <Sidebar /> */}
+     
+    <div className="mb-3">
+     
+     <form  className="d-flex" style ={{marginTop: '-160px', marginLeft: '280px'}} onSubmit ={getExpedientes } >
+       <input className="form-control me-2" style ={{ width: '400px'}}  type="text"  placeholder="Ingrese el registro del expediente"  aria-label="Search" autoComplete="off"
+        // onChange = { (e) =>{ setExpediente(e.target.value)}}
+
+         //  onChange = {handleChange}
+        // value={expediente.numero_expediente}
+         value = {expediente}
+        name = "buscar"
+    />
+   <button className="btn btn-success" type = "submit">Buscar expediente</button>
+ </form> <br/><br/>
+ </div>
+<table className="table table-bordered">
+      <thead>
+        <tr>
+          <th>Genero</th>
+          <th>Ininacionalidad</th>
+          <th>fechanacimiento</th>   
+          <th>gidpersona</th>     
+          <th>nombre</th>      
+          <th>segnombre</th>   
+          <th>apellido</th>      
+          <th>segapellido</th> 
+        </tr>
+      </thead>
+      <tbody> 
+      { expediente.length > 0 ? (
+            renderExpediente()  
+          ) : (
+            <tr colSpan ="3">Sin datos </tr>
+          )}
+      </tbody>
+      </table> 
+</div>
+)
+
 }
 
-// useEffect( () =>{
-// getExpedientes();
-// });
 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+<<<<<<< HEAD
+ 
+
+=======
 return (
     <div>
       
@@ -150,14 +213,18 @@ return (
         </table>  */}
  </div>
   );
+>>>>>>> 80397375fb0c32fbe70e6e0b81dd7692d85bf00d
 
-             }
+
+
             
-export default Tablero;
 
 
 
-
+ // if(!expediente.numero_expediente){
+  //   alert("Esos datos son erroneos");
+  //   return;
+  // }else {
   // const saludo = <h1>Hola mundo </h1>
   // document.body.append(saludo)
   /*

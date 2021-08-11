@@ -30,8 +30,6 @@ ReactDOM.render(
 // https://medium.com/@simonhoyos/enrutando-en-react-cd9e4ad6e3d3      rutas en react muy buen articulo
 // https://reactrouter.com/web/example/sidebar               side bar react router
 // https://www.salvia-kit.com/techno/react                 plantillas de dashboard
-
-// BACK END
 // https://bluuweb.github.io/node/07-jwt/#validaciones-hapi-joi
 // https://github.com/carlosazaustre/node-api-rest-2017
 // https://www.tabnine.com/code/javascript/functions/bcryptjs/compareSync

@@ -24,8 +24,8 @@ const registrousuarios = async (req, res) =>{
         const clave_persona_encriptada = await bcrypt.hash(clave_usuario, saltos);
         let consulta = 'INSERT INTO tbl_usuarios_migracion(nombre_persona, apellido_persona, nombre_usuario, clave_usuario) VALUES ($1, $2, $3, $4)';
         let datos = [nombre_persona, apellido_persona, nombre_usuario, clave_persona_encriptada];
-        let user = await pool.query(consulta, datos);
-        console.log(user);
+        await pool.query(consulta, datos);
+       // console.log(user);
         res.json({ message: 'Usuario agregado exitosamente' });
         res.end()
     } catch(error){

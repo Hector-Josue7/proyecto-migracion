@@ -34,7 +34,7 @@ export default function Login() {
         icon: 'success',
         title: 'Se ha logueado correctamente',
         showConfirmButton: false,
-        timer: 1500
+        timer: 2000
       })
      
       history.push("/tablero");

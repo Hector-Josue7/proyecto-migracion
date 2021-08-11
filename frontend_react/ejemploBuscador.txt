@@ -84,27 +84,25 @@ ________________________________________________________________________________
           * EDAD                   ->          * persona(tabla)
                                                        * edad
 _________________________________________________________________________________________________________________________________
-          * LUGAR DE NACIMIENTO    ->           (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona 
-                                                con un ALTER TABLE)
+          * LUGAR DE NACIMIENTO    ->           (Pendiente de verificar en que tabla se almacenara este dato)
 __________________________________________________________________________________________________________________________________
-          * FECHA CUMPLIR 16 AÑOS  ->           (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona 
-                                                con un ALTER TABLE)
+          * FECHA CUMPLIR 16 AÑOS  ->            (Pendiente de verificar en que tabla se almacenara este dato)
 __________________________________________________________________________________________________________________________________
           * CICATRICES O MARCAS    ->           * persona(tabla)
             NACIMIENTO                                  * signosfisicos
 __________________________________________________________________________________________________________________________________
-          * DIRECCION ANTES DE     ->           (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona 
-            LA SUSTRACCION                       con un ALTER TABLE)
+          * DIRECCION ANTES DE     ->           (Pendiente de verificar en que tabla se almacenara este dato)
+            LA SUSTRACCION                       
 ___________________________________________________________________________________________________________________________________
-          * DIRECCION ACTUAL       ->           (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona
-                                                 con un ALTER TABLE)
+          * DIRECCION ACTUAL       ->           (Pendiente de verificar en que tabla se almacenara este dato) 
+                                                 
 ____________________________________________________________________________________________________________________________________
-          * ACTIVIDADES Y          ->           (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona 
-          ENTRETENIMIENTOS                       con un ALTER TABLE)
+          * ACTIVIDADES Y          ->           (Pendiente de verificar en que tabla se almacenara este dato) 
+          ENTRETENIMIENTOS                       
           HABITUALES 
 _____________________________________________________________________________________________________________________________________ 
-          * PESO                   ->            (No se encuentra en la base de datos de sismo, podria añadirse a la tabla persona
-                                                  con un ALTER TABLE)
+          * PESO                   ->          (Pendiente de verificar en que tabla se almacenara este dato)  
+                                                  
 ______________________________________________________________________________________________________________________________________
 
 INSERT INTO personanombres(nombre, segnombre, apellido, segapellido);

@@ -48,12 +48,6 @@ CREATE TABLE tbl_idiomas_por_solicitantes(
 CREATE TYPE estadosCiviles AS ENUM ('SOLTERO/A', 'CASADO/A', 'DIVORCIADO/A', 'VIUDO/A', 'UNION LIBRE');
 
 
-
-
-
-
-
-
 CREATE TABLE tbl_personas(
   codigo_persona SERIAL PRIMARY KEY,
   codigo_nacionalidad1 INTEGER, -- llave foranea, primaria en tbl_nacionalidades
