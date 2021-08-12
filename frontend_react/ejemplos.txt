@@ -1,0 +1,252 @@
+{/* <div class="col-right">
+     <form action="https://ionos.es/dcjump" class="innerform" method="GET" target="_blank">
+          <input name="ac" value="OM.WE.WEo50K361597T7073a" style="display:none">
+             <input placeholder="Introduce tu dominio" class="domaincheckinput" name="domain" type="text">
+                <button type="submit" class="btn btn-primary" onclick="domainCheckSitecat()">
+                     Comprobar
+                </button>
+     </form>
+</div>
+
+
+
+
+
+
+let estaciones = ["Primavera", "Verano", "Otoño", "Invierno"];
+<ul>
+{estaciones.map(el => (
+     <li> {el}</li>
+) )}
+
+</ul>
+
+
+
+<ul>
+{estaciones.map  ( (el, index) => (
+     <li key ={index}> {el}</li>
+) )}
+
+</ul>
+
+
+
+
+
+Propiedades.defaultProps = {
+
+     porDefecto: "Las props",  ///propiedad por defecto
+}
+
+
+
+npm i -S prop-types
+import PropTypes from "prop-types";
+
+
+
+Propiedades.propTypes = {
+     numero: PropTypes.number, 
+}
+
+Propiedades.propTypes = {
+     numero: PropTypes.number.isRequired, 
+}
+ */}
+
+
+
+
+
+// * FORMATO RESTITUCION INTERNACIONAL  |           BASE DE DATOS SISMO 
+//       * NNA                                           
+// ____________________________________________________________________________________________________________________________   
+//                                                * personanombres(tabla)                                     
+//           * NOMBRE COMPLETO       ->                 * nombre
+//                                   ->                 * segnombre
+//                                   ->                 * apellido 
+//                                   ->                 * segapellido
+// _____________________________________________________________________________________________________________________________
+//           * FECHA NACIMIENTO      ->           * persona(tabla)
+//                                                      * fechanacimiento
+// _____________________________________________________________________________________________________________________________
+//           * NACIONALIDAD          ->          * personanacionalidad(tabla)  No hay informacion en esta tabla      
+//                                                       * gidpersona_nacionalidad
+//                                                       * gidnacionalidad           
+//                                                       * gidpersona       las personas dependen de una nacionalidad, 
+//                                                                          pero las nacionalidades son independientes
+//                                                                          este campo debe ir en la tabla de personas, no aqui
+//                                    ->          * nacionalidad(tabla)  No hay informacion en esta tabla 
+//                                                        * gidnacionalidad
+//                                                        * nacionalidad
+// ________________________________________________________________________________________________________________________________
+//           * EDAD                   ->          * persona(tabla)
+//                                                        * edad
+// _________________________________________________________________________________________________________________________________
+//           * LUGAR DE NACIMIENTO    ->           (Pendiente de verificar en que tabla se almacenara este dato)
+// __________________________________________________________________________________________________________________________________
+//           * FECHA CUMPLIR 16 AÑOS  ->            (Pendiente de verificar en que tabla se almacenara este dato)
+// __________________________________________________________________________________________________________________________________
+//           * CICATRICES O MARCAS    ->           * persona(tabla)
+//             NACIMIENTO                                  * signosfisicos
+// __________________________________________________________________________________________________________________________________
+//           * DIRECCION ANTES DE     ->           (Pendiente de verificar en que tabla se almacenara este dato)
+//             LA SUSTRACCION                       
+// ___________________________________________________________________________________________________________________________________
+//           * DIRECCION ACTUAL       ->           (Pendiente de verificar en que tabla se almacenara este dato) 
+                                                 
+// ____________________________________________________________________________________________________________________________________
+//           * ACTIVIDADES Y          ->           (Pendiente de verificar en que tabla se almacenara este dato) 
+//           ENTRETENIMIENTOS                       
+//           HABITUALES 
+// _____________________________________________________________________________________________________________________________________ 
+//           * PESO                   ->          (Pendiente de verificar en que tabla se almacenara este dato)  
+                                                  
+// ______________________________________________________________________________________________________________________________________
+
+// INSERT INTO personanombres(nombre, segnombre, apellido, segapellido);
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+import React, {useReducer, useState} from 'react';
+import ReactDOM from 'react-dom'; 
+import App from './App';
+
+
+// estado inicial 
+const initialState = {
+     count: 0,
+     countInterval: 1,
+     increment: true
+}
+
+// reducer, el cual debe cumplir con las caracteristicas de una funcion pura
+const reducer = (state, action) => {
+         switch(action.type){
+              case "INCREMENT": 
+                  return{
+                       ...state,
+                       increment: action,increment
+                  }
+
+
+
+                  case "SET_INTERVAL":  // cuando agregue algo en el input de tipo texto 
+                       return {
+                         ...state,
+                          countInterval: parseInt(action.countInterval) 
+                       }
+
+                  case "INCREASE_COUNT": // que aumente se aumente segun el intervalo que haya navegado 
+                      return{
+                           ...state,
+                           count: state.count + state.countInterval
+                      }
+
+                  case "DECREASE_COUNT":  // decrementar la cuenta segun el intervalo 
+                      return{
+                           ...state,
+                           count: state.count - state.countInterval
+                      }
+
+                    case "RESTART": // que regrese a nuestro estado inicial 
+                        return initialState;
+              default: 
+              // lanzar un error cuando no se cumpla ninguna accion que yo espere 
+                 return state; 
+              break; 
+         }
+}
+
+const Counter = () =>{
+   // Declaracion 
+   // const [state, dispatch] = useReducer( ()=>{}, {})
+  const [state, dispath] = useReducer( reducer, intialState);
+  // el dispatch es una funcion con la cual vamos a poder editar nuestro estado 
+  // dispath es una funcion con la cual le vamos a pasar el action a ese reducer 
+
+
+ const handleIncrement = (e) => {
+  const {checked} = e.target;
+  dispath({type: "INCREMENT", increment: checked})
+ }
+
+ const handleCountInterval = (e) => {
+     const {value} = e.target;
+     dispath({type: "SET_INTERVAL", countInterval: value})
+ }
+
+ const handleCount = (e) => {
+    if(state.increment){
+       dispath( {type: "INCREASE_COUNT", countInterval: value});
+    }else {
+       dispath({type: "SET_INTERVAL", countInterval: value});
+    }
+ }
+
+ const handleRestart = (e) => {
+     dispath({type: "RESTART", countInterval: value});
+ }
+
+     return(
+          <div className ="padre">
+             <h1>{"Hook useReducer by Ewebik"}</h1>
+             <p>{"Cuenta: "+state.count}</p>
+
+             <div>
+             <input 
+                    type = "checkbox">
+                    id="chk"
+                    checked = {state.increment}
+                    onChange = {handleIncrement} />
+
+              <label htmlFor ="chk">
+                {"Incrementar"}
+              </label>      
+             </div>
+             <br/>
+
+
+             <button onClick = {handleCount}>
+
+                {state.increment ? "Incrementar" : "Decrementar"}
+             </button>
+
+             <button onClick = {handleRestart}>
+                 {"Reiniciar"}
+             </button>
+
+             <div>
+                <label htmlFor = "interval">
+                     {"Intervalo"}
+                </label>
+
+                <input 
+                  type = "text"
+                  id = "interval"
+                  value = {state.countInterval}
+                  onChange = {handleCountInterval}
+                />
+             </div>
+
+          </div>
+     )
+}
+
+
+ReactDOM.render( 
+    <React.StrictMode>
+       <Counter />
+    </React.StrictMode>,
+    document.getElementById('root') 
+);
+
+
+

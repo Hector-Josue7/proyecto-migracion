@@ -3,31 +3,20 @@ import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import Navigation from '../components/Navbar'
-<<<<<<< Updated upstream
-import Sidebar3 from '../components/Sidebar3';
-=======
-<<<<<<< HEAD
-// import Sidebar from '../components/Sidebar';
-=======
-import Sidebar3 from '../components/Sidebar3';
->>>>>>> 80397375fb0c32fbe70e6e0b81dd7692d85bf00d
->>>>>>> Stashed changes
+
 
 function Register() {
     const [nombre_persona, setNombre] = useState("");
     const [apellido_persona, setApellido] = useState("");
     const [nombre_usuario, setUsername] = useState("");
-  const [clave_usuario, setPassword] = useState("");
+    const [clave_usuario, setPassword] = useState("");
 
 
   const { getLoggedIn } = useContext(AuthContext);
   const history = useHistory();
 
 
-
-
-  
-  async function register(e) {
+async function register(e) {
     e.preventDefault();
 
     try {
@@ -52,17 +41,15 @@ function Register() {
   return (
     <div>
      <Navigation />
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-     {/* <Sidebar /> */}
+
+
+
+   
      <div style ={{ marginBottom: '220px'}}>
      <h1>Registrar una nueva cuenta</h1>
-=======
->>>>>>> Stashed changes
-     <Sidebar3 />
+
       <h1>Registrar una nueva cuenta</h1>
->>>>>>> 80397375fb0c32fbe70e6e0b81dd7692d85bf00d
+
       <form onSubmit={register}>
       <input
           type="text"
