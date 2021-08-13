@@ -33,5 +33,10 @@ ReactDOM.render(
 // https://bluuweb.github.io/node/07-jwt/#validaciones-hapi-joi
 // https://github.com/carlosazaustre/node-api-rest-2017
 // https://www.tabnine.com/code/javascript/functions/bcryptjs/compareSync
-
 //https://ewebik.com/react-js/usereducer   
+// https://material-ui.com/getting-started/templates/sign-in/             formulario de login
+
+
+// https://github.com/mui-org/material-ui/blob/master/docs/src/pages/getting-started/templates/dashboard/Chart.js     dashboard
+// https://material-ui.com/getting-started/templates/dashboard/
+// https://ewebik.com/react-js/usecontext

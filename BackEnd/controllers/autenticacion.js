@@ -59,7 +59,7 @@ const loginusuarios = async (req, res) => {
                         //  res.header('auth-token', token).json({
                         //    error: null,
                         //    data: {token}
-                        //  })
+                        //  }).send();
                         
                         res.cookie("token", token, {
                                       httpOnly: true,
