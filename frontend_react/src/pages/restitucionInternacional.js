@@ -1,54 +1,76 @@
-import React, {useState} from 'react' //, { useState, useMemo }
+import React from 'react' //, { useState, useMemo }
 import 'date-fns';
 import Navigation from '../components/Navbar';
-import {Button, Modal, Form, Row, Col} from 'react-bootstrap';
+ import {Button, Form, Row, Col} from 'react-bootstrap';
+ //import styled from 'styled-components'
 
 
 import Boton from '@material-ui/core/Button';
 
 
-function RestitucionInternacional() {
-  const [show, setShow] = useState(false);
+export default function RestitucionInternacional() {
+
  
   
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+
 
 return (
         <div>
            <Navigation />
               <h1 style={{
-                  marginBottom: '80px',
-                   marginLeft: '400px'
+                  // padding: '100px 0px 0px 0px',
+                   margin: '400px 0px 0px 20px'
                 }}>Restitucion internacional</h1>
 
-             
+            
 
 
 
 
 
 
-<Boton variant="contained" color="primary" onClick={handleShow} style= {{
-  marginBottom: '300px',
-  marginLeft: '100px'
-}}> Ingresar datos de NNA </Boton>
-    <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-        <Modal.Header closeButton>
-          <Modal.Title>Datos del NNA</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-        <Form>
-                <Row>
-                  <Col>
-                    <Form.Control placeholder="Nombres" />
-                  </Col>
-                  <Col>
-                    <Form.Control placeholder="Apellidos" />
-                  </Col>
-                </Row> 
-                <Row style = {{marginTop: '20px'}}> 
+<Boton variant="contained"  color="primary" style= {{
+  
+  margin: '30px 0px 10px 100px'
+}}>
+   Ingresar datos de NNA </Boton>
+  
+        
+
+
+<DatosNNA  style={{ margin: '',
+                        }}/>
+
+
+
+
+
+
+
+        </div>
+    )
+}
+
+
+
+
+
+function DatosNNA(){
+  return(
+    <div>
+    <h2>Datos del NNA</h2>
+    <Form>
+    <Row>
+        <Col>
+          <Form.Control placeholder="Nombres" />
+        </Col>
+        <Col>
+          <Form.Control placeholder="Apellidos" />
+        </Col>
+      </Row> 
+      <Row style = {{marginTop: '20px'}}> 
                     <Col>
                     
                         <Form.Group controlId="duedate">
@@ -75,6 +97,8 @@ return (
                   <Col>
                   <Form.Control placeholder="Lugar de nacimiento" />
                   </Col>
+
+                  
                   
                 </Row>
                 <Row style = {{marginTop: '20px'}}>
@@ -84,28 +108,69 @@ return (
                             <Form.Control type="date" id="fechaNacimiento" name="duedate" placeholder="Due date" />
                         </Form.Group>
                   </Col>
-                <Col style={{marginTop:'45px'}}>
+                <Col style={{marginTop:'25px'}}>
                 <Form.Control placeholder="Numero de pasaporte o identidad" />
                 </Col>
                 </Row>
-                </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>Cancelar</Button>
-          <Button variant="primary">Enviar</Button>
-        </Modal.Footer>
-      </Modal>
+
+                <Row style ={{marginTop: '20px'}}>
+                  <Col>
+                  <Form.Control placeholder = "Cicatrices o marcas de nacimiento"/>
+                  </Col>
+                  <Col>
+                  <Form.Control placeholder = "Dirección en que residia antes de la sustracción"/>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                  <Form.Control placeholder = "Actividades y entretenimientos del NNA"/>
+                  </Col>
+                </Row>
+
+       
+                <Button variant="secondary" >Cancelar</Button>
+                <Button variant="primary">Enviar</Button> 
+                 
+                
+          
 
 
 
-
-
-
-
-
-
-        </div>
-    )
+    </Form>
+    </div>
+  );
 }
 
-export default RestitucionInternacional
+
+
+
+
+
+
+
+
+
+
+
+// const Button2 = styled.button`
+//   background: transparent;
+//   border-radius: 3px;
+//   border: 2px solid ;
+//   color: palevioletred;
+//   margin: 0 20em;
+//   padding: 0.25em 1em;
+
+  
+// `;
+// const Container = styled.div`
+//   text-align: center;
+// `
+
+/*
+render(
+  <Container>
+    <Button2>Normal Button</Button2>
+    <Button2 primary>Primary Button</Button2>
+  </Container>
+);
+*/

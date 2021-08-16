@@ -4,10 +4,11 @@ import { BrowserRouter , Switch, Route} from "react-router-dom";
 import Login from "./pages/Login";
 
 import Tablero from './pages/Tablero';
-import Blog from './pages/Blog';
+//  import Tablero2 from './pages/Tablero2';
 
  import RestitucionInternacional from './pages/RestitucionInternacional';
-//import solicitudRetorno from './pages/solicitudRetorno'
+ 
+ //import solicitudRetorno from './pages/solicitudRetorno'
 // import Sidebar3 from './pages/Sidebar3';
 
 
@@ -23,17 +24,14 @@ function Router() {
     <BrowserRouter>
      <Switch>
                 
-              {/* <Route exact path="/" component ={Login} />
-              <Route exact path="/tablero" component ={Tablero} />  */}
-             {/*  <Route exact path="/tablero2" component ={Tablero2} /> */}
-             {/* <Route exact path="/blog" component ={Blog} /> */}
-
-          
-              {/* <Route exact path="/retorno" component ={solicitudRetorno} /> */}
-              {/* <Route exact path="/sidebar3" component ={Sidebar3} /> */}
-
-              {/* <Route exact path="/restitucion" component ={RestitucionInternacional} />
-              <Route exact path="/retorno" component ={solicitudRetorno} /> */}
+              {/*  <Route exact path="/" component ={Login} />
+                   <Route exact path="/tablero" component ={Tablero} />  
+                   <Route exact path="/tablero2" component ={Tablero2} /> 
+                   <Route exact path="/blog" component ={Blog} /> 
+                   <Route exact path="/retorno" component ={solicitudRetorno} /> 
+                   <Route exact path="/sidebar3" component ={Sidebar3} /> 
+                   <Route exact path="/restitucion" component ={RestitucionInternacional} />
+                   <Route exact path="/retorno" component ={solicitudRetorno} /> */}
 
             
             
@@ -49,11 +47,12 @@ function Router() {
                 {loggedIn === true && (
                   <>
                     
-                    <Route exact path="/blog" component ={Blog} />
+                   
                     
                     <Route path="/tablero" component ={Tablero} />
+                    {/* <Route path="/tablero2" component ={Tablero2} /> */}
                     <Route exact path="/restitucion" component ={RestitucionInternacional} />
-                 
+              
                   </>
                 )}
              </Switch>

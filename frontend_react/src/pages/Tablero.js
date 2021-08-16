@@ -3,54 +3,15 @@ import axios from "axios";
 import React, {useState} from "react"; // , useEffect, useReducer 
 import Navbar from '../components/Navbar';
 
-
-
-//************************************************************** */
-// function Hijo(props) {
-//   return (
-
-
-
-
-//     return (
-//       obtencionData2.map( (exp) => {
-//         <tr key ={exp.numero_expediente}>
-//             <td>{exp.genero}</td>
-//             <td>{exp.ininacionalidad}</td>
-//             <td>{exp.fechanacimiento}</td>
-//             <td>{exp.gidpersona}</td>
-//             <td>{exp.nombre}</td>
-//             <td>{exp.segnombre}</td>
-//             <td>{exp.apellido}</td>
-//             <td>{exp.segapellido}</td>
-//         </tr>
-      
-//       }
-
-//   );
-
-// }
-
-
-
-// const reducer = (state, action) =>{
-//   if(action.type === 'increment')
-//   return state
-// }
-
 export default function Tablero() {
 const [expediente, setExpediente] = useState('');
-
-//const [counter, dispath] = useReducer(reducer, 0);
- const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
-
+const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
 
 const getExpedientes = async(e)=>{
 e.preventDefault();
 try{
   const expedienteRespuesta = await axios.get(url);  // se hace la peticion al servidor
- // console.log(expedienteRespuesta.data); // se imprime en consola esa peticion 
-  setExpediente(expedienteRespuesta.data);
+        setExpediente(expedienteRespuesta.data);
 
   document.getElementById('cuerpoTabla').innerHTML = '';
   document.getElementById("cuerpoTabla").innerHTML +=`
@@ -66,40 +27,26 @@ try{
       <td>${expedienteRespuesta.data[0].descripcion}</td>
   </tr>
   `;
- //setExpediente(''); 
- // return expedienteRespuesta.data;
+
+
 }catch(err){
   alert("Ese expediente no existe ");
   console.error(`Ha ocurrio una interrupcion:  ${err}`);
-}
-
-}
+} }
 
 const manejadorCambio = (event) =>{
-  //console.log("Valor al ingresar un valor ", event.target.value);
   setExpediente(event.target.value);
-  
 }
 
-
-
 return (
-  
-  <div>
+   <div>
     <Navbar />
-    {/* <Sidebar /> */}
-     
-    <div className="mb-3">
- 
-     <form  onSubmit ={ getExpedientes } className="d-flex" style ={{marginTop: '-160px', marginLeft: '280px'}}  >
+      <div className="mb-3">
+      <form  onSubmit ={ getExpedientes } className="d-flex" style ={{marginTop: '-160px', marginLeft: '280px'}}  >
        <input className="form-control me-2" style ={{ width: '400px'}}  type="text"  placeholder="Ingrese el registro del expediente"  aria-label="Search" autoComplete="off"
-        // onChange = { (e) =>{ setExpediente(e.target.value)}}
-
-           onChange = {manejadorCambio}
-        // value={expediente.numero_expediente}
-        //  value = {expediente}
-        
-        name = "buscar"
+            onChange = {manejadorCambio}
+             //  value = {expediente}
+            name = "buscar"
     />
    {/* <button className="btn btn-success" type = "submit">Buscar expediente</button> */}
    <button className="btn btn-success" type ="Submit" >Buscar expediente</button>

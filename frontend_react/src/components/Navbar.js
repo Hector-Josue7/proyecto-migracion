@@ -13,12 +13,12 @@ const Navigation = () => {
             <Nav>
                <Nav.Link href='/tablero'>Tablero</Nav.Link>
                {/* <Nav.Link href='/restitucion'>Restitucion Internacional</Nav.Link> */}
-               {/* <Nav.Link href='/blog'>Blog</Nav.Link> */}
-
-               <DropdownButton id="dropdown-button-dark-example2" variant="secondary" menuVariant="dark" title="Opciones migración" className="mt-2">
+           
+             
+               <DropdownButton id="dropdown-button-dark-example2" variant="secondary" menuvariant="dark" title="Opciones migración" className="mt-2">
                    <Dropdown.Item href="/restitucion" >Restitución internacional</Dropdown.Item>
-                   <Dropdown.Divider />
-                   <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                   {/* <Dropdown.Divider />
+                   <Dropdown.Item href="/tablero2">Tablero 2</Dropdown.Item> */}
                 </DropdownButton>
                <Nav.Link > <LogoutBTN/></Nav.Link>
             </Nav>
