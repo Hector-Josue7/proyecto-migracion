@@ -17,8 +17,8 @@ const Navigation = () => {
              
                <DropdownButton id="dropdown-button-dark-example2" variant="secondary" menuvariant="dark" title="Opciones migración" className="mt-2">
                    <Dropdown.Item href="/restitucion" >Restitución internacional</Dropdown.Item>
-                   {/* <Dropdown.Divider />
-                   <Dropdown.Item href="/tablero2">Tablero 2</Dropdown.Item> */}
+                   <Dropdown.Divider />
+                   <Dropdown.Item href="/tablero2">Tablero 2</Dropdown.Item>
                 </DropdownButton>
                <Nav.Link > <LogoutBTN/></Nav.Link>
             </Nav>

@@ -65,12 +65,12 @@ export default function Login() {
   <h1 className="h3 mb-3 fw-normal">Ingrese al sistema</h1>
 
    <div className="form-floating">
-      <input type="text" className="form-control" id="nombre_usuario" onChange={(e) => setUsername(e.target.value)}  value={nombre_usuario} />
+      <input type="text" className="form-control" id="nombre_usuario" onChange={(e) => setUsername(e.target.value)}  value={nombre_usuario} autoComplete="off"/>
       <label htmlFor="nombre_usuario">Nombre de usuario</label>
     </div>
 
      <div className="form-floating">
-      <input type="password" className="form-control" id="clave_usuario" onChange={(e) => setPassword(e.target.value)} value={clave_usuario} />
+      <input type="password" className="form-control" id="clave_usuario" onChange={(e) => setPassword(e.target.value)} value={clave_usuario} autoComplete="off"/>
       <label htmlFor="clave_usuario">Contraseña</label>
     </div>
 

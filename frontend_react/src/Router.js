@@ -4,7 +4,7 @@ import { BrowserRouter , Switch, Route} from "react-router-dom";
 import Login from "./pages/Login";
 
 import Tablero from './pages/Tablero';
-//  import Tablero2 from './pages/Tablero2';
+  import Tablero2 from './pages/Tablero2';
 
  import RestitucionInternacional from './pages/RestitucionInternacional';
  
@@ -50,7 +50,7 @@ function Router() {
                    
                     
                     <Route path="/tablero" component ={Tablero} />
-                    {/* <Route path="/tablero2" component ={Tablero2} /> */}
+                    <Route path="/tablero2" component ={Tablero2} />
                     <Route exact path="/restitucion" component ={RestitucionInternacional} />
               
                   </>

@@ -44,11 +44,8 @@ return (
       <div className="mb-3">
       <form  onSubmit ={ getExpedientes } className="d-flex" style ={{marginTop: '-160px', marginLeft: '280px'}}  >
        <input className="form-control me-2" style ={{ width: '400px'}}  type="text"  placeholder="Ingrese el registro del expediente"  aria-label="Search" autoComplete="off"
-            onChange = {manejadorCambio}
-             //  value = {expediente}
-            name = "buscar"
-    />
-   {/* <button className="btn btn-success" type = "submit">Buscar expediente</button> */}
+            onChange = {manejadorCambio} />
+
    <button className="btn btn-success" type ="Submit" >Buscar expediente</button>
    {/* onClick = { () => dispath({ type: 'increment'}) } */}
    {/* el dispath es una accion que se envia al parametro action del arreglo de useReducer */}

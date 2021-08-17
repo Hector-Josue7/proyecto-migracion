@@ -17,12 +17,18 @@ export default function RestitucionInternacional() {
 
 
 return (
-        <div>
+        <div className="container">
            <Navigation />
-              <h1 style={{
-                  // padding: '100px 0px 0px 0px',
-                   margin: '400px 0px 0px 20px'
-                }}>Restitucion internacional</h1>
+
+   <Row>
+     <Col className="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+     <div style={{ margin: '80px 0px 0px 5px', padding:'0px 0px 0px 0px'}}>
+              <h3 style={{
+                   padding: '0px 0px 0px 0px',
+                  
+                   margin: '20px 0px 50px 30px',
+                   
+                }}>Restitucion internacional</h3>
 
             
 
@@ -33,15 +39,23 @@ return (
 
 <Boton variant="contained"  color="primary" style= {{
   
-  margin: '30px 0px 10px 100px'
+  margin: '0px 0px 0px 30px'
 }}>
    Ingresar datos de NNA </Boton>
+              </div>  
+     </Col>
+   
+   <Col className = "col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+   <DatosNNA />   
+   </Col>
+              
+   </Row>
+              
   
         
 
 
-<DatosNNA  style={{ margin: '',
-                        }}/>
+
 
 
 
@@ -60,31 +74,31 @@ return (
 function DatosNNA(){
   return(
     <div>
-    <h2>Datos del NNA</h2>
-    <Form>
+    
+    <Form style ={{ margin:'80px 0px 0px 0px'}}>
+    <h3 style={{textAlign:'center'}}>Datos del NNA</h3>
     <Row>
-        <Col>
+        <Col style ={{margin: '20px 0px 0px 0px'}}>
           <Form.Control placeholder="Nombres" />
         </Col>
-        <Col>
+        <Col style ={{margin: '20px 0px 0px 0px'}}>
           <Form.Control placeholder="Apellidos" />
         </Col>
-      </Row> 
-      <Row style = {{marginTop: '20px'}}> 
-                    <Col>
+        <Col>
                     
                         <Form.Group controlId="duedate">
                         <label htmlFor="fechaNacimiento">Fecha de nacimiento</label>
                             <Form.Control type="date" id="fechaNacimiento" name="duedate"  />
                         </Form.Group>
                     </Col>
-                    <Col style={{marginTop:'22px'}}>
+      </Row> 
+      <Row style = {{marginTop: '20px'}}> 
+                    
+                    <Col>
                     
                     <Form.Control placeholder="Nacionalidad" />
                     </Col>
-                </Row>
-                <Row style = {{marginTop: '20px'}}>
-                  <Col>
+                    <Col>
                    
                     
                      <Form.Group controlId="edad">
@@ -93,22 +107,19 @@ function DatosNNA(){
 
                      </Form.Group>
                   </Col>
-                
                   <Col>
                   <Form.Control placeholder="Lugar de nacimiento" />
                   </Col>
-
-                  
-                  
                 </Row>
-                <Row style = {{marginTop: '20px'}}>
+             
+                <Row style = {{marginTop: '15px'}}>
                   <Col className="col-4">
                   <Form.Group controlId="duedate">
                         <label htmlFor="fechaNacimiento">Fecha en que cumpliria 16 años</label>
                             <Form.Control type="date" id="fechaNacimiento" name="duedate" placeholder="Due date" />
                         </Form.Group>
                   </Col>
-                <Col style={{marginTop:'25px'}}>
+                <Col style={{marginTop:'24px'}}>
                 <Form.Control placeholder="Numero de pasaporte o identidad" />
                 </Col>
                 </Row>
@@ -121,15 +132,33 @@ function DatosNNA(){
                   <Form.Control placeholder = "Dirección en que residia antes de la sustracción"/>
                   </Col>
                 </Row>
-                <Row>
+                <Row style ={{marginTop: '20px'}}>
                   <Col>
                   <Form.Control placeholder = "Actividades y entretenimientos del NNA"/>
                   </Col>
                 </Row>
+                <Row style ={{marginTop: '20px'}}>
+                  <Col>
+                  <Form.Control placeholder = "Peso"/>
+                  </Col>
+                  <Col>
+                  <Form.Control placeholder = "Altura"/>
+                  </Col>
+                  <Col>
+                  <Form.Control placeholder = "Color de ojos"/>
+                  </Col>
+                  <Col>
+                  <Form.Control placeholder = "Color de cabello"/>
+                  </Col>
+                </Row>
 
-       
-                <Button variant="secondary" >Cancelar</Button>
-                <Button variant="primary">Enviar</Button> 
+                <Row style ={{marginTop: '30px', boxSizing: 'contentBox', width: '100%'}}>
+                  {/* <Col style={{ width: '20%' ,padding:'0px 0px 0px 0px', }} ><Button variant="secondary" >Cancelar</Button></Col> */}
+                  <Col style={{ padding:'0px 0px 0px 70%', boxSizing: 'contentBox'}} ><Button variant="success" style={{width:'100%'}} className="btn-lg btn-block">Enviar</Button></Col>
+              
+              
+                </Row>
+                 
                  
                 
           

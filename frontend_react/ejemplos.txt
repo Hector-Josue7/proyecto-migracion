@@ -248,8 +248,54 @@ ReactDOM.render(
     document.getElementById('root') 
 );
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+npm install axios react-redux template-redux-helpers
+
+estructura del proyecto
+  src
+     components (carpeta)
+     services(carpeta)
+            TodoService.js(archivo)
+     store (carpeta)
+            actions (carpeta)
+                    todo(carpeta)
+                          todo-action-type.js
+                          todo-action.js
+            reducers (carpeta)
+            store.js (archivo)  // este fichero es para la configuracion de redux en nuestra aplicacion 
+     App.css (archivo)
+     App.js (archivo)
+     App.test.js (archivo)
+     index.css (archivo)
+     index.js (archivo)
 
 
+
+     TodoService.js (archivo)
+
+     import axios from axios
+     export default class TodoService{
+          constructor(){
+               this.url = `url de tipo get preferiblemente`
+          }
+
+          async list(){
+               try {
+                 return await axios.get(this.url);
+               }catch(error){
+                   throw error;
+               }
+          }
+     }
+
+
+
+todo-action-type.js (archivo)
+
+    export const LOADING_TODO = '[TODO] LOADING TODO'; // para consumir nuestro end point 
+    export const GET_TODOS = '[TODO] GET TODOS'; // para conseguir la data
+    export const ERROR_TODO = '[TODO] TODO ERROR'; //en caso de que ocurra un error tratando de conseguir los todos
 
 
 
