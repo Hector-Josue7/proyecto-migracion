@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box; /* Esto asegura que el relleno y el borde estén incluidos en el ancho y alto total de los elementos.  */
+    
+  }
+
+
+  /* @media screen and (min-width: 480px) {
+    body {
+      background-color: lightgreen;
+    }
+  } */
