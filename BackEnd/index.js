@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require("morgan");
 const cors = require('cors')
 
-const dotenv = require("dotenv");
+//const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const app = express()
 
@@ -11,7 +11,6 @@ app.use(cors({
   credentials: true,
 }));
 
-//app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
