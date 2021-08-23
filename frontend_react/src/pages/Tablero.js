@@ -1,9 +1,14 @@
 
 import axios from "axios";
 import React, {useState} from "react"; // , useEffect, useReducer 
+//import {useParams} from 'react-router-dom';
+
 import Navbar from '../components/Navbar';
 
 export default function Tablero() {
+
+  //const {idExp} = useParams();
+
 const [expediente, setExpediente] = useState('');
 const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
 
@@ -75,6 +80,8 @@ return (
       </tbody>
       </table> 
 
+
+{/* <h2>Numero Expediente: {idExp}</h2> */}
     
 </div>
 );
