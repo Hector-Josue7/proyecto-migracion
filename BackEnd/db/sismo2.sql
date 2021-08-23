@@ -15,8 +15,15 @@ CREATE TABLE tbl_usuarios_migracion(
 );
 
 
-CREATE UNIQUE INDEX I_tbl_usuarios_migracion_nombreUsuario ON tbl_usuarios_migracion (nombre_usuario); -- Creamos un indice unico por el campo nombre_usuario
+CREATE TABLE tbl_departamentos(
 
+  codigo_departamento SERIAL PRIMARY KEY,
+  nombre_departamento
+);
+
+
+--CREATE UNIQUE INDEX I_tbl_usuarios_migracion_nombreUsuario ON tbl_usuarios_migracion (nombre_usuario); -- Creamos un indice unico por el campo nombre_usuario
+/*
 CREATE TABLE tbl_nacionalidades(
   codigo_nacionalidad SERIAL PRIMARY KEY,
   nombre_nacionalidad VARCHAR(50)
@@ -42,12 +49,6 @@ CREATE TABLE tbl_idiomas_por_solicitantes(
   FOREIGN KEY(codigo_solicitante1) REFERENCES tbl_solicitantes(codigo_solicitante) ON DELETE CASCADE,
 );
 
--- TABLAS DEPENDIENTES: SON TABLAS QUE DEPENDEN DE UNA CLAVE FORANEA, AÑADIR UNA TABLA EN ESTA SECCION QUE DEPENDA DE LAS TABLAS INDEPENDIENTES
--- un solicitante puede tener muchos hijos, por ejemplo un padre o madre puede tener muchos hijos o incluso el encargado, creo que es alguien que esta a cargo y cuida del NNA
---CREATE TYPE languajes AS ENUM ('INGLES', 'FRANCES', 'PORTUGUES', 'ESPAÑOL');
-CREATE TYPE estadosCiviles AS ENUM ('SOLTERO/A', 'CASADO/A', 'DIVORCIADO/A', 'VIUDO/A', 'UNION LIBRE');
-
-
 CREATE TABLE tbl_personas(
   codigo_persona SERIAL PRIMARY KEY,
   codigo_nacionalidad1 INTEGER, -- llave foranea, primaria en tbl_nacionalidades
@@ -61,6 +62,16 @@ CREATE TABLE tbl_personas(
    FOREIGN KEY codigo_nacionalidad1 REFERENCES tbl_nacionalidades(codigo_nacionalidad1) ON DELETE CASCADE,
 
 );
+*/
+
+
+-- TABLAS DEPENDIENTES: SON TABLAS QUE DEPENDEN DE UNA CLAVE FORANEA, AÑADIR UNA TABLA EN ESTA SECCION QUE DEPENDA DE LAS TABLAS INDEPENDIENTES
+-- un solicitante puede tener muchos hijos, por ejemplo un padre o madre puede tener muchos hijos o incluso el encargado, creo que es alguien que esta a cargo y cuida del NNA
+--CREATE TYPE languajes AS ENUM ('INGLES', 'FRANCES', 'PORTUGUES', 'ESPAÑOL');
+--CREATE TYPE estadosCiviles AS ENUM ('SOLTERO/A', 'CASADO/A', 'DIVORCIADO/A', 'VIUDO/A', 'UNION LIBRE');
+
+
+
 
 
 

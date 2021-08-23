@@ -105,7 +105,38 @@ Propiedades.propTypes = {
                                                   
 // ______________________________________________________________________________________________________________________________________
 
-// INSERT INTO personanombres(nombre, segnombre, apellido, segapellido);
+ INSERT INTO personanombres(nombre, segnombre, apellido, segapellido) 
+   VALUES ('PrimerNombreNNA1', 'SegundoNombreNNA1', 'PrimerApellidoNNA1', 'SegundoApellidoNNA1');
+
+ INSERT INTO persona(fechanacimiento, ininacionalidad, edad);
+
+-- existe un campo llamado completename en la tabla personanombres de la base de sismo que tiene el nombre completo de 
+-- algunos usuarios, y hay otros que no los tiene, o sea estan como null ese campo 
+
+
+
+-- el campo lugar de nacimiento no se encuentra lo que se va a hacer es crear una tabla llamada municipios que dependa de la tabla departamentos
+-- pues un municipio depende de que exista un departamento, la tabla departamentos ya existe en la base de datos de sismo
+-- lo que si se tendria que hacer es un alter table sobre la tabla persona o sobre la tabla personanombres porque necesita tener el 
+-- campo que indique en que municipio nacio esa persona, o sea la tabla persona depende de la tabla municipio, pues toda persona 
+-- tiene que haber nacido en algun municipio, así como la tabla municipio es dependiente de la tabla departamentos, la sentencia a ejecutar 
+-- seria la siguiente, ese campo es una llave foranea
+
+ ALTER TABLE persona ADD COLUMN codigo_municipio INTEGER
+ ALTER TABLE personanombres ADD COLUMN codigo_municipio INTEGER (Creo que tiene más sentido en la tabla persona que en esta tabla)
+
+-- a menos que se cree otra tabla persona que dependa de la tabla municipios, entonces ahí no se necesitaria hacer un alter table para 
+-- añadir el campo que hace falta 
+
+-- existe una tabla llamada agencias la cual tiene de campos pais, deptos, municipio pero no tiene almacenada nada de información, 
+-- además no tiene relación con ninguna tabla, yo creo que se podria eliminar esa tabla 
+
+-- mas o menos con una consulta así podria extrarse la edad a partir de la fecha de nacimiento
+select (persona(datediff(dd,'2002-03-29',GETDATE()) / 365.25 as integer)
+
+-- se esta viendo si se puede hacer de forma automatica el campo fecha en que cumpliria 16 años, a partir de la fecha de nacimiento
+
+
 
 
 

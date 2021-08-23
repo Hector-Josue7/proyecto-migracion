@@ -24,20 +24,40 @@ export default function DatosNNA(){
         <h3 style={{ textAlign: "center" }}>Datos del NNA</h3>
         <hr></hr>
         <Row>
-          <Form.Group as={Col} md="4" className="col-12">
-            <Form.Label>Nombres</Form.Label>
-            <Form.Control type="text" placeholder="Nombres" required />
+          <Form.Group as={Col} md="3" className="col-12">
+            <Form.Label>Primer nombre</Form.Label>
+            <Form.Control type="text" placeholder="Primer nombre" required />
             <div className="valid-feedback">Ok</div>
             <div className="invalid-feedback">Nombre es requerido</div>
           </Form.Group>
 
-          <Form.Group as={Col} md="4" className="col-12">
-            <Form.Label>Apellidos</Form.Label>
-            <Form.Control placeholder="Apellidos" />
+          <Form.Group as={Col} md="3" className="col-12">
+            <Form.Label>Segundo nombre</Form.Label>
+            <Form.Control type="text" placeholder="Segundo nombre" required />
+            <div className="valid-feedback">Ok</div>
+            <div className="invalid-feedback">Nombre es requerido</div>
+          </Form.Group>
+
+
+          <Form.Group as={Col} md="3" className="col-12">
+            <Form.Label>Primer apellido</Form.Label>
+            <Form.Control placeholder="Primer apellido" />
             <div className="valid-feedback">Ok</div>
             <div className="invalid-feedback">El apellido es requerido</div>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="duedate" className="col-12">
+          <Form.Group as={Col} md="3" className="col-12">
+            <Form.Label>Segundo apellido</Form.Label>
+            <Form.Control placeholder="Segundo apellido" />
+            <div className="valid-feedback">Ok</div>
+            <div className="invalid-feedback">El apellido es requerido</div>
+          </Form.Group>
+         
+        </Row>
+
+
+
+        <Row style ={{margin: '20px 0px 0px 0px'}}>
+        <Form.Group as={Col} md="4" controlId="duedate" className="col-12">
             <Form.Label>Fecha de nacimiento</Form.Label>
             <Form.Control type="date" name="duedate" />
           </Form.Group>
@@ -65,7 +85,12 @@ export default function DatosNNA(){
             <Form.Control placeholder="Lugar de nacimiento" />
           </Form.Group>
         </Row>
-
+        <Row>
+        <Form.Group as={Col} md="12" controlId="problemasSalud" className="col-12 mt-4">
+            <Form.Label>Problemas de salud, medicamentos o antecedentes quirurgicos</Form.Label>
+            <Form.Control placeholder="Problemas de salud, medicamentos o antecedentes quirurgicos" />
+          </Form.Group>
+        </Row>
         <Row style={{ marginTop: "15px" }}>
           {/* <Col className="col-4">
                   <Form.Group controlId="duedate">

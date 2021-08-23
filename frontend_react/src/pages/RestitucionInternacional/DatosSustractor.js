@@ -8,7 +8,7 @@ export default function DatosSustractor() {
         noValidate
         // validated={validated}
         // onSubmit={handleSubmit}
-        style={{ margin: "50px 40px 0px 40px" }}
+        style={{ margin: "50px 40px 0px 40px"}}
       >
         <h3 style={{ textAlign: "center" }}>Datos del Sustractor</h3>
         <hr></hr>
@@ -118,57 +118,134 @@ export default function DatosSustractor() {
     <Form.Control as="textarea" placeholder="Hechos y aspectos juridicos que justifican la solicitud" rows={3} />
   </Form.Group>
         </Row>
-        <Row>
+        <Row style ={{border:'1px solid orange'}}>
 
-        <Form.Group  as={Col} className="mb-2" controlId="exampleForm.ControlInput1" style ={{marginTop:'38px', height:'167px'}}>
-          <Form.Label style={{ margin:'0px 0px 24px 75px'}}>Idiomas que habla</Form.Label>
+        <Form.Group  as={Col} className="mb-4" controlId="exampleForm.ControlInput1">
+          <Form.Label style={{ margin:'20px 0px 24px 0px'}}><strong>Documentos que se adjuntan</strong></Form.Label>
   
   
   
           {['checkbox'].map((type) => (
-      <div key={`inline-${type}`} className="mb-3" style={{ marginLeft:'10%'}} >
+      <div key={`inline-${type}`} className="mb-3">
         <Form.Check
-          inline
-          label="Español"
+          
+          label="Disposición jurídica que justificaba la residencia habitual del NNA previo al traslado o retención ilicita"
           name="group1"
           type={type}
           id={`inline-${type}-1`}
-          style={{ marginRight:'15%'}}
+          style={{ marginBottom:'15px'}}
         />
         <Form.Check
-          inline
-          label="Inglés"
+        
+          label="Acuerdo jurídicamente vinculante"
           name="group1"
           type={type}
           id={`inline-${type}-2`}
-          style={{ marginLeft: '3px'}}
+          style={{marginBottom:'15px'}}
+
+
+
+        />
+
+
+<Form.Check
+          inline
+          label="Certificación de acta de Matrimonio (si corresponde)"
+          name="group1"
+          type={type}
+          id={`inline-${type}-1`}
+          style={{marginBottom:'15px'}}
+        />
+        <Form.Check
+          
+          label="Certificación de acta de nacimiento del NNA (obligatoria)"
+          name="group1"
+          type={type}
+          id={`inline-${type}-2`}
+          style={{marginBottom:'15px'}}
         />
         
+        <Form.Check
+          
+          label="Copia de tarjeta de identidad solicitante"
+          name="group1"
+          type={type}
+          id={`inline-${type}-2`}
+          style={{marginBottom:'15px'}}
+        />
+        <Form.Check
+          
+          label="Fotografias recientes de NNA"
+          name="group1"
+          type={type}
+          id={`inline-${type}-2`}
+          style={{marginBottom:'15px'}}
+        />
+         <Form.Check
+          
+          label="Copia de tarjeta de identidad de sustractor"
+          name="group1"
+          type={type}
+          id={`inline-${type}-2`}
+          style={{ marginBottom:'15px'}}
+        />
+         <Form.Check
+          
+          label="Mapa de la zona de la posible ubicación del NNA"
+          name="group1"
+          type={type}
+          id={`inline-${type}-2`}
+          style={{marginBottom:'15px'}}
+        />
+        <Form.Check
+          
+          label="Sentencia de pérdida de patria potestad"
+          name="group1"
+          type={type}
+          id={`inline-${type}-2`}
+          style={{marginBottom:'15px'}}
+        />
+        <Form.Check
+          
+          label="Sentencia de Guarda y custodia y regimen de visitas"
+          name="group1"
+          type={type}
+          id={`inline-${type}-2`}
+          style={{marginBottom:'15px'}}
+        />
+        <Form.Check
+          
+          label="Normativa nacional realtiva a los derechos de patria potestad"
+          name="group1"
+          type={type}
+          id={`inline-${type}-2`}
+          style={{marginBottom:'15px'}}
+        />
+        <Form.Check
+          
+          label="Otros documentos"
+          name="group1"
+          type={type}
+          id={`inline-${type}-2`}
+          style={{marginBottom:'15px'}}
+        />
       </div>
     ))}
   
-  {['checkbox'].map((type) => (
-      <div key={`inline-${type}`} className="mb-3" style={{marginLeft:'10%'}}>
-        <Form.Check
-          inline
-          label="Frances"
-          name="group1"
-          type={type}
-          id={`inline-${type}-1`}
-          style={{marginRight:'17%'}}
-        />
-        <Form.Check
-          inline
-          label="Portugués"
-          name="group1"
-          type={type}
-          id={`inline-${type}-2`}
-        />
-        
-      </div>
-    ))}
+  
           </Form.Group>
           
+        </Row>
+        <Row style={{border:'1px solid green'}}>
+               
+        <Form.Group as={Col} className="mb-3 col-12" md="6" controlId="exampleForm.ControlTextarea1" style={{ marginTop: "20px"}}>
+    <Form.Label>Arreglos propuestos para el retorno del NNA</Form.Label>
+    <Form.Control as="textarea" placeholder="Arreglos propuestos para el retorno del NNA" rows={3} />
+  </Form.Group>
+  <Form.Group as={Col} className="mb-3 col-12" md="6" controlId="exampleForm.ControlTextarea1" style={{ marginTop: "20px"}}>
+    <Form.Label>Otra información pertinente</Form.Label>
+    <Form.Control as="textarea" placeholder="Otra información pertinente" rows={3} />
+  </Form.Group>
         </Row>
       </Form>
 

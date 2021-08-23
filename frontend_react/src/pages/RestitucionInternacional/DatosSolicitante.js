@@ -12,25 +12,33 @@ export default function DatosSolicitante(){
   
   
   
-  
-        <Form.Group as={Col} md="6"  style ={{marginTop: '20px'}} className ="col-12">
-        <Form.Label>Nombres</Form.Label>
-            <Form.Control placeholder="Nombres" />
-         
+        <Form.Group as={Col} md="3" className="col-12">
+            <Form.Label>Primer nombre</Form.Label>
+            <Form.Control type="text" placeholder="Primer nombre" required />
+            <div className="valid-feedback">Ok</div>
+            <div className="invalid-feedback">Nombre es requerido</div>
           </Form.Group>
-  
-  
-  
-  
-  
-  
-          <Form.Group as={Col} md="6"  style ={{marginTop: '20px'}} className ="col-12">
-          <Form.Label>Apellidos</Form.Label>
-        
-            <Form.Control placeholder="Apellidos" />
-          
+
+          <Form.Group as={Col} md="3" className="col-12">
+            <Form.Label>Segundo nombre</Form.Label>
+            <Form.Control type="text" placeholder="Segundo nombre" required />
+            <div className="valid-feedback">Ok</div>
+            <div className="invalid-feedback">Nombre es requerido</div>
           </Form.Group>
-  
+
+
+          <Form.Group as={Col} md="3" className="col-12">
+            <Form.Label>Primer apellido</Form.Label>
+            <Form.Control placeholder="Primer apellido" />
+            <div className="valid-feedback">Ok</div>
+            <div className="invalid-feedback">El apellido es requerido</div>
+          </Form.Group>
+          <Form.Group as={Col} md="3" className="col-12">
+            <Form.Label>Segundo apellido</Form.Label>
+            <Form.Control placeholder="Segundo apellido" />
+            <div className="valid-feedback">Ok</div>
+            <div className="invalid-feedback">El apellido es requerido</div>
+          </Form.Group>
   
   
   
@@ -38,10 +46,41 @@ export default function DatosSolicitante(){
         </Row>
         <Row>
   
-        <Form.Group as={Col} md="3"  style ={{marginTop: '20px'}} className ="col-12">
-        <Form.Label>Parentesco con el NNA</Form.Label>
-          <Form.Control placeholder="Parentesco con el NNA"/>
+        <Form.Group as={Col} md="3"  style ={{marginTop: '20px'}} className ="col-12 col-md-4" controlId="formGridState">
+        <Form.Label htmlFor="parentescos">Parentesco con el NNA</Form.Label>
+          {/* <Form.Control placeholder="Parentesco con el NNA"/> */}
         
+          {/* <Form.Check
+          type="radio"
+          label="first radio"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios1"
+        />
+        <Form.Check
+          type="radio"
+          label="second radio"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios2"
+        />
+        <Form.Check
+          type="radio"
+          label="third radio"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios3"
+        /> */}
+      <select id="parentescos" class="form-control">
+      <option selected>Elija una opción</option>
+        <option>Padre</option>
+        <option>Madre</option>
+        <option>Tio</option>
+        <option>Tia</option>
+        <option>Abuelo</option>
+        <option>Abuela</option>
+        <option>Padrastro</option>
+        <option>Padrastra</option>
+         
+      </select>
+          
           </Form.Group>
   
   
@@ -49,7 +88,15 @@ export default function DatosSolicitante(){
   
           <Form.Group as={Col} md="3"  style ={{marginTop: '20px',}} className ="col-12">
           <Form.Label>Nacionalidad</Form.Label>
-          <Form.Control placeholder="Nacionalidad" />
+          {/* <Form.Control placeholder="Nacionalidad" /> */}
+          <select id="nacionalidades" class="form-control">
+      <option selected>Elija una opción</option>
+        <option>Hondureña</option>
+        <option>Mexicana</option>
+        <option>Estado Unidense</option>
+        <option>Canadiense</option>
+
+        </select>
           </Form.Group>
         
          

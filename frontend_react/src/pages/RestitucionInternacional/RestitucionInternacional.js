@@ -1,7 +1,7 @@
 import React from 'react' //, { useState, useMemo }
 import 'date-fns';
 import Navigation from '../../components/Navbar';
- import { Row, Col, ButtonGroup, DropdownButton, Button, Dropdown} from 'react-bootstrap'; // Button, Form , Card, ListGroup
+ import { Row, Col} from 'react-bootstrap'; // Button, Form , Card, ListGroup , ButtonGroup, DropdownButton, Button, Dropdown
  import '../../assets/css/RestitucionInternacional.css';
  import Boton from '@material-ui/core/Button';
  
@@ -10,17 +10,21 @@ import Navigation from '../../components/Navbar';
  import DatosSustractor from './DatosSustractor';
 
 
+
+
+  
 export default function RestitucionInternacional() {
 
  
+
 return (
     <>
   <Navigation  />
-    <div className="container-fluid" style ={{margin:'400px 0px 0px 80px', width:'1300px',  border:'1px solid pink'}}>
+    <div className="container-fluid" style ={{margin:'820px 0px 0px 45px', width:'1300px',  border:'1px solid pink'}}>
            
-            <Row style={{border:'1px solid green'}}>
-           <Col className=" col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12"  style ={{backgroundColor:' #a2e2ad ', border:'1 px solid red'}}>
-     <div style={{margin: '0px 0px 0px 0px', border:'1px solid black'}} >
+            <Row style={{border:'1px solid #FF00FF', margin:'20px 0px 0px 0px'}}>
+           <Col className=" col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12"  style ={{backgroundColor:' #a2e2ad ', border:'1 px solid orange'}}>
+     <div style={{margin: '100px 0px 0px 0px', border:'1px solid orange'}} >
             
             
               <h3 style={{textAlign:'center'}}>Restitución Internacional</h3>
@@ -31,16 +35,19 @@ return (
 
    <ul className ="list-group" style ={{border:'1px solid red', margin:'40px 0px 0px 0px'}}>
 
-     <Boton variant="contained"  color="primary"  className ="list-group-item list-group-item-action">Datos de NNA</Boton>
+     <Boton variant="contained"  color="primary"  type="submit" className ="list-group-item list-group-item-action">Datos de NNA</Boton>
      <Boton style={{margin: '20px 0px 0px 0px', border: '1px solid orange'}} variant="contained"  color="primary" className ="list-group-item list-group-item-action">Datos de solicitante</Boton>
+     <Boton style={{margin: '20px 0px 0px 0px', border: '1px solid orange'}} variant="contained"  color="primary" className ="list-group-item list-group-item-action">Datos de sustractor</Boton>
    </ul>
+
+
               </div>  
      
      
 
 
 
-              <ButtonGroup vertical>
+              {/* <ButtonGroup vertical>
   <Button>Button</Button>
   <Button>Button</Button>
 
@@ -61,7 +68,7 @@ return (
     <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>
     <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>
   </DropdownButton>
-</ButtonGroup>
+</ButtonGroup> */}
 
 {/* <Card style={{ width: '18rem' }}>
   <ListGroup variant="flush">
@@ -73,26 +80,12 @@ return (
 
      </Col>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-   <Col className = "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-{/* <DatosNNA /> */}
+<Col controlid="espacioFormulario" className = "col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12" style={{border:'1px solid orange'}}>
+<DatosNNA />
    {/* <DatosSolicitante /> */}
-   <DatosSustractor />
+   {/* <DatosSustractor /> */}
+
+
    </Col>
               
    </Row>

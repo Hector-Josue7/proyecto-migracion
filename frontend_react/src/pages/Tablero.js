@@ -70,7 +70,7 @@ return (
           <th>descripcion</th>
         </tr>
       </thead>
-      <tbody id = "cuerpoTabla"> 
+      <tbody controlid = "cuerpoTabla"> 
       {/* { expediente.length > 0 ? (
             getExpedientes() 
           ) : (
