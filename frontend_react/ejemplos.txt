@@ -357,10 +357,19 @@ todo-action-type.js (archivo)
 
 
 
+municipios(tabla)
+           gidmunicipios
+           giddepartamentos
+           codemunicipios
+           namemunicipios
+           coddep 
+           x 
+           y 
+           code 
 
 
-
-
-
-const reducer
-
+departamentos(tabla)
+             giddepartamentos
+             gidpais
+             codedepartamento 
+             namedepartamento 

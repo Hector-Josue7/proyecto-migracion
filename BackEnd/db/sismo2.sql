@@ -14,6 +14,7 @@ CREATE TABLE tbl_usuarios_migracion(
             fecha_registro TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP  -- sfecha en base de datos sismo
 );
 
+CREATE UNIQUE INDEX I_tbl_usuarios_migracion_nombreUsuario ON tbl_usuarios_migracion (nombre_usuario); -- Creamos un indice unico por el campo nombre_usuario
 
 CREATE TABLE tbl_departamentos(
 
@@ -22,7 +23,45 @@ CREATE TABLE tbl_departamentos(
 );
 
 
---CREATE UNIQUE INDEX I_tbl_usuarios_migracion_nombreUsuario ON tbl_usuarios_migracion (nombre_usuario); -- Creamos un indice unico por el campo nombre_usuario
+CREATE TABLE tbl_municipios(
+  codigo_municipio SERIAL PRIMARY KEY,
+  giddepartamentos INTEGER, --llave foranea
+  nombre_municipio VARCHAR(100),
+
+  FOREIGN KEY(giddepartamentos) REFERENCES departamentos(giddepartamentos) ON DELETE CASCADE
+
+);
+
+
+
+SELECT   A.codemunicipios, A.namemunicipios, A.giddepartamentos, 
+         B.namedepartamento, B.codedepartamento FROM municipios A
+INNER JOIN departamentos B ON A.giddepartamentos = B.giddepartamentos
+
+
+
+select * from municipios where coddep = '08'
+
+
+
+select  municipios.giddepartamentos, municipios.namemunicipios, municipios.codemunicipios,
+        dep.namedepartamento, dep.codedepartamento
+from municipios 
+inner join departamentos dep on (dep.giddepartamentos = municipios.giddepartamentos)
+where dep.codedepartamento = '08'
+
+
+select * from municipios where (select namedepartamento from departamentos where 
+							   codedepartamento =03
+
+
+
+select  municipios.giddepartamentos, municipios.namemunicipios, municipios.codemunicipios, dep.namedepartamento, dep.codedepartamento
+from municipios 
+inner join departamentos dep on (dep.giddepartamentos = municipios.giddepartamentos)
+where dep.codedepartamento = '08'
+
+
 /*
 CREATE TABLE tbl_nacionalidades(
   codigo_nacionalidad SERIAL PRIMARY KEY,

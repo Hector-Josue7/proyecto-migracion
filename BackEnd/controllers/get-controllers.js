@@ -49,7 +49,31 @@ const detalleExpediente = async (req, res) =>{
       }
 }
 
+const municipiosPorDepartamento = async (req, res) =>{
+  try{
+      let datos = [req.params.departamento]
+      let consulta = `select dep.namedepartamento as Departamento, mun.namemunicipios as Municipio
+      from departamentos dep
+      inner join municipios mun on dep.codedepartamento = mun.coddep
+      where  mun.coddep = $1`
+      let respuesta = await pool.query(consulta, datos)
+      res.json(respuesta.rows)
+      res.end();
+    } catch(err) {
+      res.status(500).send({message: err})
+      res.end();
+    }
+}
+
+/*
+select dep.namedepartamento as Departamento, mun.namemunicipios as Municipio
+from departamentos dep
+inner join municipios mun on dep.codedepartamento = mun.coddep
+where  mun.coddep = '11'
+*/
+
 module.exports = {
     detalleExpediente,
-    todosExpedientes
+    todosExpedientes,
+    municipiosPorDepartamento
 }
