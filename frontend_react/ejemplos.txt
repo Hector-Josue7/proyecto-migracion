@@ -137,7 +137,32 @@ select (persona(datediff(dd,'2002-03-29',GETDATE()) / 365.25 as integer)
 -- se esta viendo si se puede hacer de forma automatica el campo fecha en que cumpliria 16 años, a partir de la fecha de nacimiento
 
 
+select * from planilla
+select * from "Log_Triggers"
 
+create function SP_Test() returns Trigger
+as
+$$
+
+begin 
+
+insert into "Log_Triggers" values (old.nombre, old.nic, old.salario);
+
+return new;
+End
+$$
+Language plpgsql
+
+
+create trigger TR_Update before update on planilla
+for each row
+execute procedure SP_Test();
+
+update planilla set
+                nombre ='Eduardo',
+                nid = '11',
+                salario = '6000'
+where nombre = 'eduardo'
 
 
 
