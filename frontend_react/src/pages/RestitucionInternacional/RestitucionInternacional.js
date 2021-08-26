@@ -6,8 +6,8 @@ import Navigation from '../../components/Navbar';
  import Boton from '@material-ui/core/Button';
  
  import  DatosNNA  from './DatosNNA';
- import DatosSolicitante  from './DatosSolicitante';
- import DatosSustractor from './DatosSustractor';
+ //import DatosSolicitante  from './DatosSolicitante';
+ //import DatosSustractor from './DatosSustractor';
 
 
 

@@ -1,23 +1,89 @@
 
 import React, {useState} from 'react' //, { useState, useMemo }
-import { Form, Row, Col, Button} from 'react-bootstrap'; // Button,
+import { Form, Row, Col, Button  } from 'react-bootstrap'; //FloatingLabel ,
+import axios from "axios";
+
+
+
+
+
+
 export default function DatosNNA(){
-  const [validated, setValidated] = useState(false);
+  //const [validated, setValidated] = useState(false);
+    const [estadoSelect, setEstadoSelect] = useState("");
+
 
   const handleSubmit = (event) => {
+   event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     }
 
-    setValidated(true);
+    //setValidated(true);
   };
+
+
+
+  // const handleSubmit= (event) => {
+  //   alert('Your favorite flavor is: ' + estadoSelect);
+  //   event.preventDefault();
+  // }
+
+  
+
+const handleChange = async (event) =>{
+const url = `http://localhost:3007/migracion/municipios/${event.target.value}`;
+  //setEstadoSelect({value: event.target.value});
+//console.log(event.target.value);
+//console.log(estadoSelect);
+try{
+  const respuestaMunicipios = await axios.get(url);
+  setEstadoSelect(respuestaMunicipios.data);
+
+ console.log(respuestaMunicipios.data);
+
+// for(let i=0; i< respuestaMunicipios.data.length; i++){
+//   document.getElementById("slcMunicipios").innerHTML+=`
+//   <option>${respuestaMunicipios.data[i].municipio}</option>
+//   `;
+// }
+
+
+
+//console.log(estadoSelect);
+
+//return respuestaMunicipios.data;
+
+
+
+} catch(err){
+console.error(err);
+}
+}
+
+
+
+
+
+// const renderMunicipios = async() =>{
+//   //event.preventDefault();
+//  let arrayMunicipios = handleChange();
+ 
+//  //alert(arrayMunicipios);
+  
+     
+   
+
+
+// }
+
   return (
     <>
       <Form
-        noValidate
-        validated={validated}
+        // noValidate
+        // validated={validated}
         onSubmit={handleSubmit}
         style={{ margin: "50px 40px 0px 40px" }}
       >
@@ -80,11 +146,61 @@ export default function DatosNNA(){
             />
           </Form.Group>
 
-          <Form.Group as={Col} md="4" controlId="lugarNacimiento" className="col-12">
-            <Form.Label>Lugar de nacimiento</Form.Label>
-            <Form.Control placeholder="Lugar de nacimiento" />
-          </Form.Group>
+         
         </Row>
+      <Row>
+      <Form.Group as={Col} md="4" style={{marginTop: '20px'}} controlId="lugarNacimiento" className="col-12">
+            <Form.Label>Lugar de nacimiento</Form.Label>
+            {/* <Form.Control placeholder="Lugar de nacimiento" /> */}
+            
+
+<select className="custom-select custom-select-sm form-control" onChange={handleChange} >
+ 
+  <option defaultValue>Departamentos</option>
+  <option key="01">Atlantida</option>
+  <option key="06">Choluteca</option>
+  <option key="02">Colon</option>
+  <option key="03">Comayagua</option>
+  <option key="04">Copan</option>
+  <option key="05">Cortes</option>
+  <option key="07">El Paraiso</option>
+  <option key="08">Francisco Morazan</option>
+  <option key="09">Gracias a Dios</option>
+  <option key="10">Intibuca</option>
+  <option key="11">Islas de La Bahia</option>
+  <option key="12">La Paz</option>
+  <option key="13">Lempira</option>
+  <option key="14">Ocotepeque</option>
+  <option key="15">Olancho</option>
+  <option key="16">Santa Barbara</option>
+  <option key="17">Valle</option>
+  <option key="18">Yoro</option>
+ 
+  
+</select>
+
+
+          </Form.Group> 
+
+
+           <Form.Group as={Col} md="4" style={{marginTop: '50px'}} controlId="lugarNacimiento" className="col-12">
+           
+            {/* <Form.Control placeholder="Lugar de nacimiento" /> */}
+            
+
+<select controlid="slcMunicipios" className="custom-select custom-select-sm form-control" >
+  <option defaultValue>Municipios</option>
+
+ {/* {
+
+   renderMunicipios
+ } */}
+</select>
+
+
+          </Form.Group>         
+          
+      </Row>
         <Row>
         <Form.Group as={Col} md="12" controlId="problemasSalud" className="col-12 mt-4">
             <Form.Label>Problemas de salud, medicamentos o antecedentes quirurgicos</Form.Label>
@@ -162,3 +278,47 @@ export default function DatosNNA(){
     </>
   );
 }
+/*
+class FlavorForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: 'coconut'};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Pick your favorite flavor:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+*/
+
+
+
+
+
+
+

@@ -55,7 +55,7 @@ const municipiosPorDepartamento = async (req, res) =>{
       let consulta = `select dep.namedepartamento as Departamento, mun.namemunicipios as Municipio
       from departamentos dep
       inner join municipios mun on dep.codedepartamento = mun.coddep
-      where  mun.coddep = $1`
+      where  dep.namedepartamento = $1`
       let respuesta = await pool.query(consulta, datos)
       res.json(respuesta.rows)
       res.end();

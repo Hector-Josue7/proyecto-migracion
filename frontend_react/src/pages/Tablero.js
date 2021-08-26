@@ -44,11 +44,15 @@ const manejadorCambio = (event) =>{
 }
 
 return (
-   <div>
+   <>
     <Navbar />
       <div className="mb-3">
-      <form  onSubmit ={ getExpedientes } className="d-flex" style ={{marginTop: '-160px', marginLeft: '280px'}}  >
-       <input className="form-control me-2" style ={{ width: '400px'}}  type="text"  placeholder="Ingrese el registro del expediente"  aria-label="Search" autoComplete="off"
+      <form  onSubmit ={ getExpedientes } 
+             className="d-flex" 
+             style ={{marginTop: '-160px', marginLeft: '280px'}}  >
+       <input className="form-control me-2" 
+              style ={{ width: '400px'}}  
+              type="text"  placeholder="Ingrese el registro del expediente"  aria-label="Search" autoComplete="off"
             onChange = {manejadorCambio} />
 
    <button className="btn btn-success" type ="Submit" >Buscar expediente</button>
@@ -83,7 +87,7 @@ return (
 
 {/* <h2>Numero Expediente: {idExp}</h2> */}
     
-</div>
+</>
 );
 
 }

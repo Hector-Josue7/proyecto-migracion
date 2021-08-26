@@ -2,14 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';  // para hacer renderizaciones en el HTML
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
-import './index.css';
-
-ReactDOM.render( 
-
-       <App />,
-
-    document.getElementById('root') 
-);
+//import './index.css';
+ //import {MigracionApp} from './MigracionApp';
+//<MigracionApp />,
+ReactDOM.render( <App />, document.getElementById('root') );
 
 
 // FRONT END 
@@ -40,4 +36,6 @@ ReactDOM.render(
 // https://github.com/mui-org/material-ui/blob/master/docs/src/pages/getting-started/templates/dashboard/Chart.js     dashboard
 // https://material-ui.com/getting-started/templates/dashboard/
 // https://ewebik.com/react-js/usecontext
+
+//  https://reactjs.org/docs/forms.html#the-select-tag
 

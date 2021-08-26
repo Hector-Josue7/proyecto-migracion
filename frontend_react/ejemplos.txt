@@ -319,6 +319,8 @@ estructura del proyecto
                           todo-action-type.js
                           todo-action.js
             reducers (carpeta)
+                    todo(carpeta)
+                          todo-reducer.js
             store.js (archivo)  // este fichero es para la configuracion de redux en nuestra aplicacion 
      App.css (archivo)
      App.js (archivo)
@@ -353,23 +355,109 @@ todo-action-type.js (archivo)
     export const GET_TODOS = '[TODO] GET TODOS'; // para conseguir la data
     export const ERROR_TODO = '[TODO] TODO ERROR'; //en caso de que ocurra un error tratando de conseguir los todos
 
+todo-action.js
+
+   import TodoService from '../../../services/TodoService';
+   import { actionCreator} from 'template-redux-helpers';
+   import {LOADING_TODO, GET_TODOS, ERROR_TODO} from './todo-action-type';
+
+   const todoService = new TodoService();
+
+   export const getTodos = () => {
+        return dispath => {
+             dispath(actionCreator (LOADING_TODO, "payload", "payloados")(true));
+
+             todoService
+             .list()
+             .then(data => {
+                  dispath(actionCreator(GET_TODOS, "payload")(data));
+                  dispath(actionCreator(LOADING_TODO, "payload")(false));
+             })
+             .catch(error =>{
+                  dispath(actionCreator(ERROR_TODO, "payload")(error));
+                  dispath(actionCreator(LOADING_TODO, "payload")(false));  
+             });
+        }
+   }
+
+
+
+todo-reducer.js 
+      
+        import {reducerCreator} from 'template-redux-helpers';
+        import {LOADING_TODO, GET_TODOS, ERROR_TODO} from '../../actions/todo/todo-action-type'
+        
+        const initialState = {
+             isLoading: false,
+        }
 
 
 
 
-municipios(tabla)
-           gidmunicipios
-           giddepartamentos
-           codemunicipios
-           namemunicipios
-           coddep 
-           x 
-           y 
-           code 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-departamentos(tabla)
-             giddepartamentos
-             gidpais
-             codedepartamento 
-             namedepartamento 
+{
+  "name": "frontend_react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@date-io/date-fns": "^2.11.0",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/pickers": "^3.3.10",
+    "@reduxjs/toolkit": "^1.6.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.2",
+    "formit": "0.0.2",
+    "mdb-ui-kit": "^3.8.1",
+    "prop-types": "^15.7.2",
+    "query-string": "^7.0.1",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-bootstrap-date-picker": "^5.1.0",
+    "react-dom": "^17.0.2",
+    "react-formal": "^2.2.3",
+    "react-icons": "^4.2.0",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.1",
+    "rsuite": "^4.10.2",
+    "semantic-ui-react": "^2.0.3",
+    "styled-components": "^5.3.0",
+    "sweetalert2": "^11.0.19",
+    "universal-cookie": "^4.0.4",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+
+            
