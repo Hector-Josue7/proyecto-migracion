@@ -10,7 +10,7 @@ import axios from "axios";
 
 export default function DatosNNA(){
   //const [validated, setValidated] = useState(false);
-    const [estadoSelect, setEstadoSelect] = useState("");
+    const [estadoMunicipio, setEstadoSelect] = useState("");
 
 
   const handleSubmit = (event) => {
@@ -153,7 +153,9 @@ console.error(err);
 
           <Form.Group as={Col} md="4" controlId="edad" className="col-12">
             <Form.Label>Edad</Form.Label>
-            <input
+            <input 
+
+
               className="form-control"
               type="number"
               name="edad"
