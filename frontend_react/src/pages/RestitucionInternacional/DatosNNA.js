@@ -34,22 +34,39 @@ export default function DatosNNA(){
   
 
 const handleChange = async (event) =>{
-const url = `http://localhost:3007/migracion/municipios/${event.target.value}`;
-  //setEstadoSelect({value: event.target.value});
+
+ event.preventDefault();
 //console.log(event.target.value);
-//console.log(estadoSelect);
+
+
+
 try{
-  const respuestaMunicipios = await axios.get(url);
-  setEstadoSelect(respuestaMunicipios.data);
+  const respuestaMunicipios = await axios.get(`http://localhost:3007/migracion/municipios/${event.target.value}`);
+  
 
  console.log(respuestaMunicipios.data);
+ console.log(respuestaMunicipios.data.length);
+ 
+ setEstadoSelect(respuestaMunicipios.data);
+ let select = document.getElementById("slcMunicipios");
 
-// for(let i=0; i< respuestaMunicipios.data.length; i++){
-//   document.getElementById("slcMunicipios").innerHTML+=`
-//   <option>${respuestaMunicipios.data[i].municipio}</option>
-//   `;
-// }
 
+
+
+ 
+
+ for(let i=0; i< respuestaMunicipios.data.length; i++){
+  // document.getElementById("slcMunicipios").innerHTML+=`
+  // <option>${respuestaMunicipios.data[i].municipio}</option>
+  // `;
+
+//let option = document.createElement("option"); 
+//option.innerHTML = respuestaMunicipios.data[i].municipio;
+
+//select.appendChild(option);
+console.log(respuestaMunicipios.data[i].municipio);
+
+ }
 
 
 //console.log(estadoSelect);
@@ -154,7 +171,7 @@ console.error(err);
             {/* <Form.Control placeholder="Lugar de nacimiento" /> */}
             
 
-<select className="custom-select custom-select-sm form-control" onChange={handleChange} >
+<select className="custom-select custom-select-sm form-control" onChange={handleChange}  >
  
   <option defaultValue>Departamentos</option>
   <option key="01">Atlantida</option>
@@ -191,10 +208,8 @@ console.error(err);
 <select controlid="slcMunicipios" className="custom-select custom-select-sm form-control" >
   <option defaultValue>Municipios</option>
 
- {/* {
 
-   renderMunicipios
- } */}
+
 </select>
 
 
