@@ -15,9 +15,7 @@ import {DatosNNA} from './DatosNNA';
   
 export default function RestitucionInternacional() {
 
- 
-
-return (
+ return (
     <>
   <Navigation  />
     <div className="container-fluid" style ={{margin:'820px 0px 0px 45px', width:'1300px',  border:'1px solid pink'}}>

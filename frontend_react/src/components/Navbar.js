@@ -1,7 +1,7 @@
 
 
 import { Navbar, Nav, Container, Dropdown, DropdownButton} from 'react-bootstrap' // SplitButton, ButtonGroup
-import LogoutBTN from './LogoutBTN'
+import {LogoutBTN} from './LogoutBTN'
 
 const Navigation = () => {
   return(

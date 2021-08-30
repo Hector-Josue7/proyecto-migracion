@@ -1,6 +1,7 @@
 
 import axios from "axios";
 import React, {useState} from "react"; // , useEffect, useReducer 
+
 //import {useParams} from 'react-router-dom';
 
 import Navbar from '../components/Navbar';
@@ -10,10 +11,15 @@ export default function Tablero() {
   //const {idExp} = useParams();
 
 const [expediente, setExpediente] = useState('');
-const url = `http://localhost:3007/migracion/expedientes/${expediente}`;
+const url = `http://localhost:3007/migracion/expedientes/${expediente.trim()}`; // el metodo trim() elimina los espacios a la izquierda y derecha del texto que se envia en el input
 
 const getExpedientes = async(e)=>{
 e.preventDefault();
+
+
+ 
+
+
 try{
   const expedienteRespuesta = await axios.get(url);  // se hace la peticion al servidor
         setExpediente(expedienteRespuesta.data);
@@ -37,10 +43,15 @@ try{
 }catch(err){
   alert("Ese expediente no existe ");
   console.error(`Ha ocurrio una interrupcion:  ${err}`);
-} }
+} 
+
+}
 
 const manejadorCambio = (event) =>{
+  
   setExpediente(event.target.value);
+  
+  
 }
 
 return (
@@ -52,14 +63,15 @@ return (
              style ={{marginTop: '-160px', marginLeft: '280px'}}  >
        <input className="form-control me-2" 
               style ={{ width: '400px'}}  
-              type="text"  placeholder="Ingrese el registro del expediente"  aria-label="Search" autoComplete="off"
-            onChange = {manejadorCambio} />
+              type="search"  placeholder="Ingrese el registro del expediente"  aria-label="Search" autoComplete="off"
+            onChange = {manejadorCambio}  value={expediente}/>
 
    <button className="btn btn-success" type ="Submit" >Buscar expediente</button>
    {/* onClick = { () => dispath({ type: 'increment'}) } */}
    {/* el dispath es una accion que se envia al parametro action del arreglo de useReducer */}
  </form> <br/><br/>
  </div>
+ <h5 style={{alignContent: 'center', border:'1px solid red', width:'70%', margin:'0px 0px 0px 40px'}}>Los datos del expediente {expediente} son</h5> <br/>
 <table className="table table-bordered">
       <thead>
         <tr>
@@ -83,6 +95,7 @@ return (
          
       </tbody>
       </table> 
+
 
 
 {/* <h2>Numero Expediente: {idExp}</h2> */}

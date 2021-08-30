@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 
-function LogoutBTN() {
+export function LogoutBTN() {
   const { getLoggedIn } = useContext(AuthContext);
 
   const history = useHistory();
@@ -17,4 +17,3 @@ function LogoutBTN() {
   return <button className="btn btn-danger" onClick={logOut}>Cerrar sesion</button>;
 }
 
-export default LogoutBTN;

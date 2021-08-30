@@ -34,8 +34,7 @@ inner join seguimiento s ON (ex.id = s.id)
 inner join tipocustodio tc ON (s.gidtipocustodio = tc.gidtipocustodio)
 where pex.expnna = 'nna' and ex.numero_expediente = 'Exp-DINAF-2019-4475'
 Exp-DINAF-2019-1110
-  
-  */
+*/
 
 
 
