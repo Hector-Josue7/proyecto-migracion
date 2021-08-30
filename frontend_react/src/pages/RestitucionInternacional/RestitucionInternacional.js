@@ -4,11 +4,11 @@ import Navigation from '../../components/Navbar';
  import { Row, Col} from 'react-bootstrap'; // Button, Form , Card, ListGroup , ButtonGroup, DropdownButton, Button, Dropdown
  import '../../assets/css/RestitucionInternacional.css';
  import Boton from '@material-ui/core/Button';
+
  
- import  DatosNNA  from './DatosNNA';
  //import DatosSolicitante  from './DatosSolicitante';
  //import DatosSustractor from './DatosSustractor';
-
+import {DatosNNA} from './DatosNNA';
 
 
 
@@ -35,9 +35,10 @@ return (
 
    <ul className ="list-group" style ={{border:'1px solid red', margin:'40px 0px 0px 0px'}}>
 
-     <Boton variant="contained"  color="primary"  type="submit" className ="list-group-item list-group-item-action">Datos de NNA</Boton>
+    <Boton variant="contained"  color="primary"  type="submit" className ="list-group-item list-group-item-action">Datos de NNA</Boton> 
      <Boton style={{margin: '20px 0px 0px 0px', border: '1px solid orange'}} variant="contained"  color="primary" className ="list-group-item list-group-item-action">Datos de solicitante</Boton>
-     <Boton style={{margin: '20px 0px 0px 0px', border: '1px solid orange'}} variant="contained"  color="primary" className ="list-group-item list-group-item-action">Datos de sustractor</Boton>
+   <Boton style={{margin: '20px 0px 0px 0px', border: '1px solid orange'}} variant="contained"  color="primary" className ="list-group-item list-group-item-action">Datos de sustractor</Boton>
+   
    </ul>
 
 

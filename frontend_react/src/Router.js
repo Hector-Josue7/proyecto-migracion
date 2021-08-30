@@ -5,6 +5,10 @@ import Login from "./pages/Login";
 import Tablero from './pages/Tablero';
 import Tablero2 from './pages/Tablero2';
 import RestitucionInternacional from './pages/RestitucionInternacional/RestitucionInternacional'
+import { DatosNNA } from './pages/RestitucionInternacional/DatosNNA';
+import DatosSolicitante  from './pages/RestitucionInternacional/DatosSolicitante';
+import  DatosSustractor  from './pages/RestitucionInternacional/DatosSustractor';
+
 import AuthContext from "./context/AuthContext";
 
 function Router() {
@@ -23,7 +27,12 @@ function Router() {
             <>
                   <Route path="/tablero" component ={Tablero} />
                   <Route path="/tablero2" component ={Tablero2} />
-                  <Route exact path="/restitucion" component ={RestitucionInternacional} />
+                  <Route  path="/restitucion" component ={RestitucionInternacional} />
+
+                  <Route  path="/restitucion/datosnna" component =  {DatosNNA} />
+                  <Route  path="/restitucion/datossolicitante" component ={DatosSolicitante} />
+                  <Route  path="/restitucion/datossustractor" component ={DatosSustractor} />
+                  
             </>
             )}
        </Switch>

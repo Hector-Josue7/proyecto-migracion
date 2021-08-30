@@ -8,9 +8,9 @@ import axios from "axios";
 
 
 
-export default function DatosNNA(){
+export  function DatosNNA(){
   //const [validated, setValidated] = useState(false);
-    const [estadoMunicipio, setEstadoSelect] = useState("");
+    const [municipios, setMunicipios ] = useState("");
 
 
   const handleSubmit = (event) => {
@@ -26,45 +26,26 @@ export default function DatosNNA(){
 
 
 
-  // const handleSubmit= (event) => {
-  //   alert('Your favorite flavor is: ' + estadoSelect);
-  //   event.preventDefault();
-  // }
-
-  
-
-const handleChange = async (event) =>{
+  const handleChange = async (event) =>{
 
  event.preventDefault();
 //console.log(event.target.value);
-
-
-
 try{
   const respuestaMunicipios = await axios.get(`http://localhost:3007/migracion/municipios/${event.target.value}`);
-  
-
- console.log(respuestaMunicipios.data);
- console.log(respuestaMunicipios.data.length);
- 
- setEstadoSelect(respuestaMunicipios.data);
+  setMunicipios(respuestaMunicipios.data);
  let select = document.getElementById("slcMunicipios");
 
 
 
 
  
-
+ document.getElementById("slcMunicipios").innerHTML=``;
  for(let i=0; i< respuestaMunicipios.data.length; i++){
-  // document.getElementById("slcMunicipios").innerHTML+=`
-  // <option>${respuestaMunicipios.data[i].municipio}</option>
-  // `;
+   document.getElementById("slcMunicipios").innerHTML+=`
+   <option>${respuestaMunicipios.data[i].municipio}</option>
+   `;
 
-//let option = document.createElement("option"); 
-//option.innerHTML = respuestaMunicipios.data[i].municipio;
 
-//select.appendChild(option);
-console.log(respuestaMunicipios.data[i].municipio);
 
  }
 
@@ -175,7 +156,7 @@ console.error(err);
 
 <select className="custom-select custom-select-sm form-control" onChange={handleChange}  >
  
-  <option defaultValue>Departamentos</option>
+ 
   <option key="01">Atlantida</option>
   <option key="06">Choluteca</option>
   <option key="02">Colon</option>
@@ -207,8 +188,8 @@ console.error(err);
             {/* <Form.Control placeholder="Lugar de nacimiento" /> */}
             
 
-<select controlid="slcMunicipios" className="custom-select custom-select-sm form-control" >
-  <option defaultValue>Municipios</option>
+<select id="slcMunicipios" className="custom-select custom-select-sm form-control" >
+
 
 
 
